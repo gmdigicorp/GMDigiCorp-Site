@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>GMDigiCorp</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#000814;
+color:white;
+overflow-x:hidden;
+}
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:
+radial-gradient(circle at center,#001d3d 0%,#000814 70%);
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+width:600px;
+height:600px;
+background:rgba(0,140,255,0.12);
+filter:blur(120px);
+border-radius:50%;
+animation:pulse 5s infinite ease-in-out;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.2);}
+100%{transform:scale(1);}
+}
+
+.container{
+position:relative;
+z-index:2;
+max-width:900px;
+}
+
+.profile{
+width:170px;
+height:170px;
+border-radius:50%;
+overflow:hidden;
+margin:auto;
+border:4px solid #00aeff;
+box-shadow:0 0 40px #008cff;
+animation:float 4s ease-in-out infinite;
+}
+
+.profile img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-12px);}
+100%{transform:translateY(0px);}
+}
+
+.logo{
+width:100%;
+max-width:650px;
+margin-top:30px;
+filter:drop-shadow(0 0 20px #008cff);
+}
+
+h2{
+font-size:20px;
+font-weight:300;
+letter-spacing:6px;
+margin-top:30px;
+color:#cfd8dc;
+}
+
+.highlight{
+color:#00aaff;
+font-weight:600;
+}
+
+.coming{
+margin-top:20px;
+font-size:32px;
+font-weight:700;
+color:#00aaff;
+letter-spacing:8px;
+text-shadow:0 0 15px #00aaff;
+}
+
+.btn{
+display:inline-block;
+margin-top:40px;
+padding:15px 35px;
+background:linear-gradient(90deg,#00aaff,#0066ff);
+color:white;
+text-decoration:none;
+border-radius:50px;
+font-weight:600;
+transition:0.4s;
+box-shadow:0 0 25px rgba(0,170,255,0.5);
+}
+
+.btn:hover{
+transform:translateY(-4px) scale(1.05);
+}
+
+footer{
+position:absolute;
+bottom:20px;
+width:100%;
+text-align:center;
+font-size:14px;
+color:#8fa3b0;
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="profile">
+<img src="69406.png" alt="Founder">
+</div>
+
+<img src="69409.png" class="logo" alt="GMDigiCorp Logo">
+
+<h2>
+DIGITAL <span class="highlight">REVOLUTION</span> STARTS HERE
+</h2>
+
+<div class="coming">
+COMING SOON
+</div>
+
+<a href="mailto:gmdigicorp@gmail.com" class="btn">
+Contact Us
+</a>
+
+</div>
+
+<footer>
+© 2026 GMDigiCorp • Innovating the Digital Future
+</footer>
+
+</section>
+
+</body>
+</html>
