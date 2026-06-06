@@ -10,88 +10,136 @@
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
-        body { font-family: 'Poppins', sans-serif; background-color: #030712; color: #f3f4f6; overflow-x: hidden; }
-        .tech-heading { font-family: 'Orbitron', sans-serif; }
-        .glow-text { text-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3); }
-        .glow-border { box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); border: 1px solid rgba(59, 130, 246, 0.6); }
-        .bg-gradient-animate { background: linear-gradient(-45deg, #030712, #0b1528, #1e3a8a, #030712); background-size: 400% 400%; animation: gradientBG 15s ease infinite; }
-        @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-        .cyber-frame { position: relative; clip-path: polygon(10% 0%, 100% 0%, 100% 90%, 90% 100%, 0% 100%, 0% 10%); }
+        
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: #020617; 
+            color: #f3f4f6; 
+            overflow-x: hidden; 
+        }
+        
+        .tech-heading { 
+            font-family: 'Orbitron', sans-serif; 
+        }
+        
+        /* High-tech glowing text effects */
+        .glow-text { 
+            text-shadow: 0 0 15px rgba(59, 130, 246, 0.6), 0 0 30px rgba(6, 182, 212, 0.4); 
+        }
+        
+        /* Animated main tech brand background */
+        .bg-cyber-gradient { 
+            background: radial-gradient(circle at 50% 30%, #0c1e3d 0%, #030712 70%);
+        }
+
+        /* Continuous pulse animation for the large centered logo */
+        .animated-logo {
+            animation: logoPulse 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes logoPulse {
+            0% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.4));
+            }
+            100% {
+                transform: scale(1.03);
+                filter: drop-shadow(0 0 25px rgba(6, 182, 212, 0.7));
+            }
+        }
+
+        /* Octagonal / Cyber Shape for the Founder Photo */
+        .cyber-octagon {
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+        }
+        
+        /* Subtle rotation for tech ring lines */
+        .tech-ring {
+            animation: rotateRing 20s linear infinite;
+        }
+        @keyframes rotateRing {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
     </style>
 </head>
-<body class="bg-gradient-animate min-h-screen flex flex-col justify-between">
+<body class="bg-cyber-gradient min-h-screen flex flex-col justify-between relative">
 
-    <header class="w-full max-w-7xl mx-auto p-6 flex justify-between items-center animate__animated animate__fadeInDown">
-        <div class="flex items-center space-x-3">
-            <img src="logo.png" alt="GMDigiCorp" class="h-10 w-auto object-contain">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#1e293b10_1px,transparent_1px),linear-gradient(to_bottom,#1e293b10_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none"></div>
+
+    <header class="w-full max-w-7xl mx-auto p-6 flex justify-between items-center z-10 animate__animated animate__fadeInDown">
+        <div class="flex items-center">
+            <span class="text-lg font-bold tech-heading text-white tracking-wider">GM<span class="text-blue-500">Digi</span>Corp</span>
         </div>
-        <nav class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-semibold text-gray-400">
+        <nav class="hidden md:flex space-x-8 text-xs uppercase tracking-widest font-semibold text-gray-400">
             <a href="#" class="text-blue-400 hover:text-white transition">Home</a>
             <a href="#" class="hover:text-blue-400 transition">Services</a>
             <a href="#" class="hover:text-blue-400 transition">About</a>
+            <a href="#" class="hover:text-blue-400 transition">Projects</a>
             <a href="#" class="hover:text-blue-400 transition">Contact</a>
         </nav>
     </header>
 
-    <main class="w-full max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center flex-grow">
+    <main class="w-full max-w-5xl mx-auto px-6 py-8 flex flex-col items-center text-center flex-grow z-10">
         
-        <div class="space-y-6 animate__animated animate__fadeInLeft">
-            <div class="inline-block bg-blue-950/50 text-blue-400 border border-blue-800/60 px-4 py-1.5 rounded-full text-xs uppercase tracking-widest font-bold">
-                <i class="fa-solid fa-microchip mr-2 animate-pulse"></i> Next-Gen IT Solutions
-            </div>
-            <h2 class="text-4xl md:text-6xl font-extrabold tech-heading leading-tight text-white">
-                BUILDING THE <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 glow-text">FUTURE OF IT</span> <br>
-                TECHNOLOGY
-            </h2>
-            <p class="text-gray-400 text-base md:text-lg max-w-xl font-light">
-                Where Vision Meets Global Digital Solutions. Providing cutting-edge cloud architecture, enterprise network infrastructure, cybersecurity, and modern web development.
+        <div class="animate__animated animate__fadeInUp">
+            <h3 class="text-2xl md:text-4xl font-extrabold tech-heading text-white tracking-wide uppercase">
+                Building The Future <br class="md:hidden"> Of IT Technology
+            </h3>
+            <p class="text-xs md:text-sm text-gray-400 font-light mt-2 tracking-wide max-w-xl mx-auto">
+                Where Vision Meets Global Digital Solutions.
             </p>
-            <div class="flex flex-wrap gap-4 pt-4">
-                <a href="mailto:gmdigicorp@gmail.com" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3.5 rounded-lg font-semibold tracking-wide shadow-lg shadow-blue-600/30 glow-border transition transform hover:-translate-y-0.5 duration-200">
-                    Explore Services <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
-                </a>
-                <a href="tel:+971522230991" class="bg-transparent hover:bg-gray-900 border border-gray-700 text-gray-300 px-6 py-3.5 rounded-lg font-semibold tracking-wide transition">
-                    <i class="fa-solid fa-phone mr-2 text-blue-400"></i> Contact Expert
-                </a>
-            </div>
         </div>
 
-        <div class="relative flex flex-col items-center justify-center animate__animated animate__fadeInRight">
-            <div class="absolute w-72 h-72 bg-blue-500/10 rounded-full blur-3xl -z-10"></div>
+        <div class="my-6 w-full max-w-xl px-4 animate__animated animate__zoomIn">
+            <img src="logo.png" alt="GMDigiCorp Branding" class="animated-logo w-full h-auto object-contain mx-auto max-h-32">
+        </div>
 
-            <div class="w-72 h-96 bg-gradient-to-b from-blue-500 to-cyan-600 p-[2px] cyber-frame shadow-2xl shadow-blue-500/20">
-                <div class="w-full h-full bg-gray-950 cyber-frame overflow-hidden relative group">
-                    <img src="founder.png" alt="MD Golam Mostofa - Founder" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 object-center">
-                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/70 to-transparent p-4 pt-12">
-                        <p class="text-xs text-blue-400 tracking-widest uppercase font-bold">Founder & Visionary</p>
-                        <h4 class="text-lg font-bold tech-heading text-white">MD Golam Mostofa</h4>
-                        <p class="text-[11px] text-gray-400">IT Infrastructure Engineer • Dubai, UAE</p>
-                    </div>
+        <div class="relative w-full max-w-md flex flex-col items-center my-4 animate__animated animate__fadeInUp">
+            
+            <div class="absolute w-80 h-80 border border-blue-500/20 rounded-full tech-ring pointer-events-none"></div>
+            <div class="absolute w-96 h-96 border border-cyan-500/10 border-dashed rounded-full tech-ring pointer-events-none" style="animation-direction: reverse;"></div>
+
+            <div class="w-72 h-72 md:w-80 md:h-80 bg-gradient-to-tr from-blue-500 via-cyan-400 to-blue-600 p-[3px] cyber-octagon shadow-[0_0_50px_rgba(6,182,212,0.3)]">
+                <div class="w-full h-full bg-slate-950 cyber-octagon overflow-hidden">
+                    <img src="founder.png" alt="MD Golam Mostofa - Founder" class="w-full h-full object-cover object-center transform hover:scale-105 transition duration-500">
                 </div>
             </div>
 
-            <div class="mt-8 flex flex-wrap justify-center gap-3 max-w-md">
-                <span class="bg-gray-900/80 border border-gray-800 text-xs px-3 py-1.5 rounded-md text-gray-300 flex items-center gap-2">
-                    <i class="fa-solid fa-cloud text-blue-400"></i> Microsoft 365
-                </span>
-                <span class="bg-gray-900/80 border border-gray-800 text-xs px-3 py-1.5 rounded-md text-gray-300 flex items-center gap-2">
-                    <i class="fa-solid fa-network-wired text-cyan-400"></i> Infrastructure & Ops
-                </span>
-                <span class="bg-gray-900/80 border border-gray-800 text-xs px-3 py-1.5 rounded-md text-gray-300 flex items-center gap-2">
-                    <i class="fa-solid fa-shield-halved text-emerald-400"></i> Active Directory
-                </span>
+            <div class="mt-4 bg-slate-900/90 border border-blue-500/30 px-6 py-2 rounded-full backdrop-blur-md shadow-lg">
+                <p class="text-xs text-cyan-400 tracking-widest uppercase font-bold">Founder & Visionary</p>
+                <h4 class="text-base font-bold tech-heading text-white">MD Golam Mostofa</h4>
+            </div>
+        </div>
+
+        <div class="mt-4 space-y-6 animate__animated animate__fadeInUp">
+            <div>
+                <a href="mailto:gmdigicorp@gmail.com" class="inline-block bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white px-10 py-3.5 rounded-lg text-sm font-bold tracking-widest uppercase shadow-lg shadow-cyan-500/20 transition transform hover:-translate-y-0.5">
+                    Explore Services <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
+                </a>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-6 text-gray-400 text-xs pt-2">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-cloud text-blue-400"></i> Cloud Computing</span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-cyan-400"></i> Cybersecurity</span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-robot text-indigo-400"></i> AI Solutions</span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-code text-emerald-400"></i> Software Dev</span>
             </div>
         </div>
 
     </main>
 
-    <footer class="w-full border-t border-gray-900 bg-black/40 backdrop-blur-md py-6 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-            <div>&copy; 2026 <span class="text-gray-300 font-semibold">GMDigiCorp</span>. All Rights Reserved.</div>
-            <div class="flex space-x-6 text-gray-400 text-sm">
-                <a href="mailto:gmdigicorp@gmail.com" class="hover:text-blue-400 transition"><i class="fa-solid fa-envelope"></i></a>
-                <a href="tel:+971522230991" class="hover:text-blue-400 transition"><i class="fa-solid fa-phone"></i></a>
+    <footer class="w-full border-t border-slate-900/60 bg-slate-950/80 backdrop-blur-md py-4 px-6 z-10">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] text-gray-500">
+            <div class="flex items-center gap-4">
+                <span>&copy; 2026 <span class="text-gray-300 font-semibold tech-heading">GMDigiCorp</span></span>
+                <a href="mailto:gmdigicorp@gmail.com" class="hover:text-blue-400 transition"><i class="fa-solid fa-envelope mr-1"></i> gmdigicorp@gmail.com</a>
+                <a href="tel:+971522230991" class="hover:text-blue-400 transition"><i class="fa-solid fa-phone mr-1"></i> Dubai, UAE</a>
+            </div>
+            <div class="flex space-x-4 text-xs text-gray-400">
+                <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
     </footer>
