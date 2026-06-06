@@ -22,42 +22,59 @@
             font-family: 'Orbitron', sans-serif; 
         }
         
-        /* Background Layer with Dubai Skyline & Tech Overlay */
-        .dubai-bg {
-            background: linear-gradient(to bottom, rgba(2, 6, 23, 0.85) 0%, rgba(12, 30, 61, 0.75) 50%, rgba(2, 6, 23, 0.95) 100%), 
+        /* Premium Background with Dubai Skyline & Animated Tech Overlay */
+        .dubai-cyber-bg {
+            background: linear-gradient(to bottom, rgba(2, 6, 23, 0.82) 0%, rgba(12, 30, 61, 0.70) 50%, rgba(2, 6, 23, 0.95) 100%), 
                         url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            position: relative;
+        }
+
+        /* Animated Glowing Grid Particles to simulate your shared image */
+        .dubai-cyber-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(6, 182, 212, 0.15) 1px, transparent 0);
+            background-size: 24px 24px;
+            animation: particleMove 20s linear infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes particleMove {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
         }
         
-        .glow-text { 
-            text-shadow: 0 0 15px rgba(59, 130, 246, 0.6), 0 0 30px rgba(6, 182, 212, 0.4); 
+        /* Full Banner Logo Animation */
+        .banner-logo {
+            animation: bannerGlow 4s ease-in-out infinite alternate;
+            width: 100%;
+            max-width: 750px; /* Expands into a real wide banner layout */
         }
 
-        /* Large Logo Pulse Animation */
-        .animated-logo {
-            animation: logoPulse 3s ease-in-out infinite alternate;
-        }
-
-        @keyframes logoPulse {
+        @keyframes bannerGlow {
             0% {
+                filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.5)) brightness(1);
                 transform: scale(1);
-                filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.4));
             }
             100% {
-                transform: scale(1.02);
-                filter: drop-shadow(0 0 25px rgba(6, 182, 212, 0.6));
+                filter: drop-shadow(0 0 35px rgba(6, 182, 212, 0.8)) brightness(1.1);
+                transform: scale(1.01);
             }
         }
 
-        /* Octagonal Cyber Shape for Founder Photo */
+        /* Perfect Octagon Cyber Frame for Founder Photo */
         .cyber-octagon {
             clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
         }
         
+        /* Rotating Tech HUD Ring Lines */
         .tech-ring {
-            animation: rotateRing 25s linear infinite;
+            animation: rotateRing 30s linear infinite;
         }
         @keyframes rotateRing {
             from { transform: rotate(0deg); }
@@ -65,13 +82,13 @@
         }
     </style>
 </head>
-<body class="dubai-bg min-h-screen flex flex-col justify-between relative">
+<body class="dubai-cyber-bg min-h-screen flex flex-col justify-between relative">
 
-    <div class="absolute inset-0 bg-[linear-gradient(to_right,#06b6d408_1px,transparent_1px),linear-gradient(to_bottom,#06b6d408_1px,transparent_1px)] bg-[size:3rem_3rem] pointer-events-none"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#06b6d405_1px,transparent_1px),linear-gradient(to_bottom,#06b6d405_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-0"></div>
 
     <header class="w-full max-w-7xl mx-auto p-6 flex justify-between items-center z-10 animate__animated animate__fadeInDown">
         <div class="flex items-center">
-            <span class="text-lg font-bold tech-heading text-white tracking-wider">GM<span class="text-blue-500">Digi</span>Corp</span>
+            <span class="text-xl font-bold tech-heading text-white tracking-wider">GM<span class="text-blue-500">Digi</span>Corp</span>
         </div>
         <nav class="hidden md:flex space-x-8 text-xs uppercase tracking-widest font-semibold text-gray-300">
             <a href="#" class="text-blue-400 hover:text-white transition">Home</a>
@@ -82,56 +99,64 @@
         </nav>
     </header>
 
-    <main class="w-full max-w-5xl mx-auto px-6 py-6 flex flex-col items-center text-center flex-grow z-10 justify-center">
+    <main class="w-full max-w-7xl mx-auto px-6 py-4 flex flex-col items-center text-center flex-grow z-10 justify-center">
         
         <div class="animate__animated animate__fadeInUp">
-            <h3 class="text-2xl md:text-4xl font-extrabold tech-heading text-white tracking-wide uppercase">
-                Building The Future <br class="md:hidden"> Of IT Technology
+            <h3 class="text-3xl md:text-5xl font-extrabold tech-heading text-white tracking-wider uppercase leading-tight">
+                Building The Future <br> Of IT Technology
             </h3>
-            <p class="text-xs md:text-sm text-cyan-400 font-medium mt-2 tracking-widest uppercase">
+            <p class="text-xs md:text-sm text-cyan-400 font-semibold mt-3 tracking-widest uppercase">
                 Where Vision Meets Global Digital Solutions
             </p>
         </div>
 
-        <div class="my-6 w-full max-w-xl px-4 animate__animated animate__zoomIn">
-            <img src="logo.png" alt="GMDigiCorp Branding" class="animated-logo w-full h-auto object-contain mx-auto max-h-32">
+        <div class="my-8 w-full flex justify-center items-center px-2 animate__animated animate__zoomIn">
+            <img src="logo.png" alt="GMDigiCorp Branding Banner" class="banner-logo h-auto object-contain max-h-40 md:max-h-48">
         </div>
 
-        <div class="relative w-full max-w-md flex flex-col items-center my-2 animate__animated animate__fadeInUp">
+        <div class="relative w-full max-w-md flex flex-col items-center my-4 animate__animated animate__fadeInUp">
             
-            <div class="absolute w-72 h-72 border border-cyan-500/30 rounded-full tech-ring pointer-events-none"></div>
-            <div class="absolute w-80 h-80 border border-blue-500/20 border-dashed rounded-full tech-ring pointer-events-none" style="animation-direction: reverse;"></div>
+            <div class="absolute w-80 h-80 border border-cyan-500/20 rounded-full tech-ring pointer-events-none"></div>
+            <div class="absolute w-96 h-96 border border-blue-500/15 border-dashed rounded-full tech-ring pointer-events-none" style="animation-direction: reverse;"></div>
 
-            <div class="w-64 h-64 md:w-72 md:h-72 bg-gradient-to-tr from-blue-500 via-cyan-400 to-indigo-600 p-[3px] cyber-octagon shadow-[0_0_40px_rgba(6,182,212,0.4)]">
+            <div class="w-64 h-64 md:w-72 md:h-72 bg-gradient-to-tr from-blue-500 via-cyan-400 to-indigo-600 p-[3px] cyber-octagon shadow-[0_0_50px_rgba(6,182,212,0.45)]">
                 <div class="w-full h-full bg-slate-950 cyber-octagon overflow-hidden">
                     <img src="founder.png" alt="MD Golam Mostofa - Founder" class="w-full h-full object-cover object-center transform hover:scale-105 transition duration-500">
                 </div>
             </div>
 
-            <div class="mt-4 bg-slate-950/90 border border-cyan-500/40 px-6 py-1.5 rounded-full backdrop-blur-md shadow-xl">
-                <p class="text-[10px] text-cyan-400 tracking-widest uppercase font-bold">Founder & Visionary</p>
-                <h4 class="text-base font-bold tech-heading text-white tracking-wide">MD Golam Mostofa</h4>
+            <div class="mt-5 bg-slate-950/90 border border-cyan-500/40 px-8 py-2 rounded-full backdrop-blur-md shadow-2xl">
+                <p class="text-[10px] text-cyan-400 tracking-widest uppercase font-bold tracking-widest">Founder & Visionary</p>
+                <h4 class="text-base font-bold tech-heading text-white tracking-wide mt-0.5">MD Golam Mostofa</h4>
             </div>
         </div>
 
-        <div class="mt-6 space-y-6 animate__animated animate__fadeInUp">
+        <div class="mt-6 space-y-6 animate__animated animate__fadeInUp w-full max-w-4xl">
             <div>
-                <a href="mailto:gmdigicorp@gmail.com" class="inline-block bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white px-10 py-3 rounded-lg text-xs font-bold tracking-widest uppercase shadow-lg shadow-cyan-500/30 transition transform hover:-translate-y-0.5">
+                <a href="mailto:gmdigicorp@gmail.com" class="inline-block bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white px-12 py-4 rounded-xl text-xs font-bold tracking-widest uppercase shadow-lg shadow-cyan-500/30 transition transform hover:-translate-y-0.5 duration-200">
                     Explore Services <i class="fa-solid fa-chevron-right ml-2 text-[10px]"></i>
                 </a>
             </div>
 
-            <div class="flex flex-wrap justify-center gap-5 text-gray-300 text-xs font-medium pt-2 bg-slate-950/40 p-3 rounded-xl backdrop-blur-sm border border-slate-800/50">
-                <span class="flex items-center gap-2"><i class="fa-solid fa-cloud text-blue-400"></i> Cloud Computing</span>
-                <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-cyan-400"></i> Cybersecurity</span>
-                <span class="flex items-center gap-2"><i class="fa-solid fa-robot text-indigo-400"></i> AI Solutions</span>
-                <span class="flex items-center gap-2"><i class="fa-solid fa-code text-emerald-400"></i> Software Dev</span>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-gray-300 text-xs font-medium pt-2 max-w-3xl mx-auto">
+                <div class="bg-slate-950/60 p-3 rounded-xl backdrop-blur-sm border border-slate-800/60 flex items-center justify-center gap-2 hover:border-cyan-500/40 transition">
+                    <i class="fa-solid fa-cloud text-blue-400 text-sm"></i> Cloud Computing
+                </div>
+                <div class="bg-slate-950/60 p-3 rounded-xl backdrop-blur-sm border border-slate-800/60 flex items-center justify-center gap-2 hover:border-cyan-500/40 transition">
+                    <i class="fa-solid fa-shield-halved text-cyan-400 text-sm"></i> Cybersecurity
+                </div>
+                <div class="bg-slate-950/60 p-3 rounded-xl backdrop-blur-sm border border-slate-800/60 flex items-center justify-center gap-2 hover:border-cyan-500/40 transition">
+                    <i class="fa-solid fa-robot text-indigo-400 text-sm"></i> AI Solutions
+                </div>
+                <div class="bg-slate-950/60 p-3 rounded-xl backdrop-blur-sm border border-slate-800/60 flex items-center justify-center gap-2 hover:border-cyan-500/40 transition">
+                    <i class="fa-solid fa-code text-emerald-400 text-sm"></i> Software Dev
+                </div>
             </div>
         </div>
 
     </main>
 
-    <footer class="w-full border-t border-slate-900/80 bg-slate-950/90 backdrop-blur-md py-4 px-6 z-10">
+    <footer class="w-full border-t border-slate-900/80 bg-slate-950/95 backdrop-blur-md py-4 px-6 z-10">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] text-gray-400">
             <div class="flex flex-wrap items-center justify-center gap-4">
                 <span>&copy; 2026 <span class="text-white font-semibold tech-heading">GMDigiCorp</span></span>
