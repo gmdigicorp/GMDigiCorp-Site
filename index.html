@@ -2,20 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>GMDigiCorp | Building the Future of IT Technology</title>
+  <title>GMDigiCorp | AI‑Powered IT Support & Automation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GMDigiCorp – AI‑aligned IT support, Microsoft 365, Intune, Active Directory, VPN, POS & retail IT, designed for humans and future AI copilots." />
   <style>
     :root {
       --bg: #020617;
-      --bg-alt: #02091f;
       --primary: #38bdf8;
-      --primary-soft: rgba(56, 189, 248, 0.15);
       --accent: #a855f7;
       --text: #e5e7eb;
       --muted: #9ca3af;
-      --card: #020617;
       --border: rgba(148, 163, 184, 0.25);
-      --danger: #f97373;
     }
 
     * {
@@ -27,7 +24,8 @@
     }
 
     body {
-      background: radial-gradient(circle at top, #0f172a 0, #020617 45%, #000 100%);
+      background:
+        radial-gradient(circle at top, #0f172a 0, #020617 45%, #000 100%);
       color: var(--text);
       min-height: 100vh;
       overflow-x: hidden;
@@ -38,7 +36,7 @@
       text-decoration: none;
     }
 
-    /* Layout */
+    /* Header */
     header {
       position: sticky;
       top: 0;
@@ -50,7 +48,7 @@
         rgba(15, 23, 42, 0.7),
         transparent
       );
-      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav {
@@ -66,39 +64,17 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.9rem;
     }
 
-    .logo-mark {
-      width: 28px;
-      height: 28px;
-      border-radius: 999px;
-      background: conic-gradient(
-        from 180deg,
-        #38bdf8,
-        #a855f7,
-        #22c55e,
-        #38bdf8
-      );
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 24px rgba(56, 189, 248, 0.7);
-      animation: spin-slow 12s linear infinite;
+    .logo img {
+      height: 42px;
+      filter: drop-shadow(0 0 12px rgba(56,189,248,0.6));
+      transition: 0.3s ease;
     }
 
-    .logo-mark span {
-      font-size: 0.7rem;
-      font-weight: 800;
-      color: #0b1120;
-    }
-
-    @keyframes spin-slow {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    .logo img:hover {
+      filter: drop-shadow(0 0 20px rgba(56,189,248,1));
+      transform: scale(1.05);
     }
 
     .nav-links {
@@ -136,6 +112,7 @@
     .nav-cta {
       padding: 0.45rem 0.9rem;
       border-radius: 999px;
+      border: 1px solid rgba: 999px;
       border: 1px solid rgba(56, 189, 248, 0.6);
       background: radial-gradient(circle at top left, #0ea5e9 0, #020617 55%);
       color: #e0f2fe;
@@ -378,18 +355,17 @@
       animation: spin-slow 18s linear infinite;
     }
 
-    .avatar-inner {
+    .avatar-ring img {
       width: 100%;
       height: 100%;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #1d4ed8, #020617 60%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #e5e7eb;
-      font-size: 2.4rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      object-fit: cover;
+      box-shadow: 0 0 25px rgba(56,189,248,0.6);
+    }
+
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
     .hero-chip-row {
@@ -516,7 +492,6 @@
       transform: translateY(-3px);
       box-shadow: 0 0 32px rgba(15, 23, 42, 0.9);
       border-color: rgba(56, 189, 248, 0.7);
-      background: radial-gradient(circle at top, #020617 0, #020617 45%, #020617 100%);
     }
 
     .card:hover::before {
@@ -561,7 +536,7 @@
       color: var(--muted);
     }
 
-    /* Knowledge base */
+    /* Knowledge Hub */
     .kb-layout {
       display: grid;
       grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
@@ -752,8 +727,7 @@
   <header>
     <div class="nav">
       <div class="logo">
-        <div class="logo-mark"><span>GM</span></div>
-        <span>GMDigiCorp</span>
+        <img src="logo.png" alt="GMDigiCorp Logo">
       </div>
       <nav class="nav-links">
         <a href="#home">Home</a>
@@ -786,7 +760,7 @@
           <span class="badge">AI‑assisted Troubleshooting</span>
           <span class="badge">Microsoft 365 & Intune</span>
           <span class="badge">Secure Remote Support</span>
-          <span class="badge">24/7 Knowledge‑first Approach</span>
+          <span class="badge">Knowledge‑first Service Desk</span>
         </div>
 
         <div class="hero-actions">
@@ -801,7 +775,7 @@
         <div class="hero-metrics">
           <div class="metric">
             <span>5+ yrs</span>
-            Enterprise IT Support
+            Enterprise & Retail IT Support
           </div>
           <div class="metric">
             <span>Multi‑Cloud</span>
@@ -809,7 +783,7 @@
           </div>
           <div class="metric">
             <span>AI‑Ready</span>
-            Knowledge‑driven SOPs
+            SOPs & Knowledge Base
           </div>
         </div>
       </div>
@@ -821,7 +795,7 @@
           <div class="founder-role">IT Support Engineer • AI‑aligned Service Design</div>
 
           <div class="avatar-ring">
-            <div class="avatar-inner">GM</div>
+            <img src="founder.png" alt="Founder Photo">
           </div>
 
           <div class="hero-chip-row">
