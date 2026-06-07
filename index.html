@@ -1,273 +1,1081 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>GMDigiCorp | Building The Future Through Technology</title>
-    <meta name="description" content="GMDigiCorp provides elite IT Solutions in Dubai & globally. Specialized in Microsoft 365, Cloud Architecture, Endpoint Administration, Network Infrastructure, and Modern Web Development.">
-    <meta name="keywords" content="GMDigiCorp, GM Digi Corp, MD Golam Mostofa, IT Infrastructure Dubai, Microsoft 365 Enterprise Consultant, Modern Workplace, Intune deployment, Windows Autopilot, Cybersecurity Dubai, IT Operations Specialist UAE">
-    <meta name="author" content="MD Golam Mostofa">
-    <meta name="robots" content="index, follow">
+  <meta charset="UTF-8" />
+  <title>GMDigiCorp | Building the Future of IT Technology</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-alt: #02091f;
+      --primary: #38bdf8;
+      --primary-soft: rgba(56, 189, 248, 0.15);
+      --accent: #a855f7;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #020617;
+      --border: rgba(148, 163, 184, 0.25);
+      --danger: #f97373;
+    }
 
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="GMDigiCorp | Next-Gen IT Solutions & Infrastructure Architecture">
-    <meta property="og:description" content="Where Vision Meets Global Digital Solutions. Leading Cloud Computing, Cybersecurity, and Managed IT Operations.">
-    <meta property="og:image" content="logo.png">
-    <meta property="og:url" content="https://gmdigicorp.com">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    }
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="GMDigiCorp | Enterprise IT Infrastructure Solutions">
-    <meta name="twitter:description" content="Specialized End-to-End Enterprise Cloud and Workplace Solutions by MD Golam Mostofa in Dubai, UAE.">
-    <meta name="twitter:image" content="logo.png">
+    body {
+      background: radial-gradient(circle at top, #0f172a 0, #020617 45%, #000 100%);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Poppins:wght@300;400;500;600;700&display=swap');
-        
-        body { 
-            font-family: 'Poppins', sans-serif; 
-            background-color: #020817; 
-            color: #f3f4f6; 
-            overflow-x: hidden; 
-            scroll-behavior: smooth;
-        }
-        
-        .tech-heading { 
-            font-family: 'Orbitron', sans-serif; 
-        }
-        
-        /* Deep Navy Blue Base with Cyber Laser Streaks & Lights */
-        .deep-navy-cyber {
-            background: radial-gradient(circle at 50% 30%, #071530 0%, #020714 75%, #01040d 100%);
-            position: relative;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        .deep-navy-cyber::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: 
-                linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px),
-                linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-            pointer-events: none;
-            z-index: 0;
-        }
+    /* Layout */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.95),
+        rgba(15, 23, 42, 0.7),
+        transparent
+      );
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
 
-        /* Matrix Particle System Lights Overlay */
-        .tech-lights {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: 
-                radial-gradient(circle at 15% 25%, rgba(6, 182, 212, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 85% 65%, rgba(59, 130, 246, 0.15) 0%, transparent 45%);
-            filter: blur(50px);
-            animation: lightPulse 10s ease-in-out infinite alternate;
-            pointer-events: none;
-            z-index: 0;
-        }
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.9rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        @keyframes lightPulse {
-            0% { opacity: 0.7; transform: scale(1); }
-            100% { opacity: 1; transform: scale(1.03); }
-        }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
 
-        /* Custom Header Matching Logo Text Design */
-        .logo-style-header {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
-            letter-spacing: 1px;
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(59, 130, 246, 0.6), 0 0 20px rgba(6, 182, 212, 0.4);
-        }
-        .logo-style-header span {
-            color: #3b82f6;
-            text-shadow: 0 0 15px rgba(59, 130, 246, 0.8);
-        }
-        
-        /* Banner Logo Configuration */
-        .premium-banner-logo {
-            animation: ultimateGlow 3.5s ease-in-out infinite alternate;
-            width: 100%;
-            max-width: 700px;
-        }
+    .logo-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: conic-gradient(
+        from 180deg,
+        #38bdf8,
+        #a855f7,
+        #22c55e,
+        #38bdf8
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 24px rgba(56, 189, 248, 0.7);
+      animation: spin-slow 12s linear infinite;
+    }
 
-        @keyframes ultimateGlow {
-            0% { filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.4)) brightness(0.95); transform: scale(1); }
-            100% { filter: drop-shadow(0 0 45px rgba(6, 182, 212, 0.8)) brightness(1.15); transform: scale(1.01); }
-        }
+    .logo-mark span {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #0b1120;
+    }
 
-        /* Sci-Fi Profile Hex/Octagon Frame */
-        .cyber-octagon-frame {
-            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-        }
-        
-        .hud-rotate { animation: spinHUD 40s linear infinite; }
-        @keyframes spinHUD { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
 
-        /* Smooth UI Cards for SEO & Reach Content expansion */
-        .expert-card {
-            background: rgba(10, 25, 53, 0.4);
-            border: 1px solid rgba(6, 182, 212, 0.15);
-            backdrop-filter: blur(12px);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .expert-card:hover {
-            background: rgba(13, 31, 66, 0.65);
-            border-color: rgba(6, 182, 212, 0.5);
-            box-shadow: 0 15px 40px -10px rgba(6, 182, 212, 0.25);
-            transform: translateY(-5px);
-        }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
 
-        /* Floating Interactive WhatsApp Widget */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 24px;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            z-index: 100;
-            width: 56px;
-            height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.1) rotate(8deg);
-            background-color: #20ba5a;
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
-        }
-    </style>
+    .nav-links a {
+      position: relative;
+      color: var(--muted);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.6);
+      background: radial-gradient(circle at top left, #0ea5e9 0, #020617 55%);
+      color: #e0f2fe;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.4);
+      transition: transform 0.15s ease, box-shadow 0.15s ease,
+        background 0.15s ease;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 26px rgba(56, 189, 248, 0.7);
+      background: radial-gradient(circle at top left, #22c55e 0, #020617 55%);
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 2.5rem;
+      align-items: center;
+      padding: 2.5rem 0 3rem;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -120px;
+      background:
+        radial-gradient(circle at 10% 0, rgba(56, 189, 248, 0.18), transparent 55%),
+        radial-gradient(circle at 90% 0, rgba(168, 85, 247, 0.18), transparent 55%);
+      opacity: 0.9;
+      z-index: -1;
+    }
+
+    .hero-left {
+      position: relative;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.8);
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #22c55e 0, #16a34a 40%, #052e16 100%);
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 3vw + 1.2rem, 3.1rem);
+      line-height: 1.1;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(to right, #38bdf8, #a855f7);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 32rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .badge {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 0.75rem;
+      color: #e0f2fe;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+      margin-bottom: 1.4rem;
+    }
+
+    .btn-primary {
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9, #22c55e);
+      color: #0b1120;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 0 24px rgba(56, 189, 248, 0.7);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px) scale(1.01);
+      box-shadow: 0 0 32px rgba(56, 189, 248, 0.9);
+    }
+
+    .btn-ghost {
+      padding: 0.7rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--muted);
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: border 0.15s ease, color 0.15s ease, background 0.15s ease;
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(56, 189, 248, 0.7);
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .hero-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .metric span {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    /* Hero Right */
+    .hero-right {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-card {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+      border-radius: 1.5rem;
+      padding: 1.4rem 1.4rem 1.6rem;
+      background: radial-gradient(circle at top, #020617 0, #020617 45%, #020617 100%);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow:
+        0 0 40px rgba(15, 23, 42, 0.9),
+        0 0 80px rgba(56, 189, 248, 0.25);
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.18), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(168, 85, 247, 0.18), transparent 55%);
+      opacity: 0.8;
+      z-index: -1;
+      animation: float-bg 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes float-bg {
+      from { transform: translate3d(-10px, 0, 0); }
+      to { transform: translate3d(10px, -10px, 0); }
+    }
+
+    .founder-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #a5b4fc;
+      margin-bottom: 0.4rem;
+    }
+
+    .founder-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .founder-role {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .avatar-ring {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 1rem;
+      border-radius: 999px;
+      background:
+        conic-gradient(from 180deg, #38bdf8, #a855f7, #22c55e, #38bdf8);
+      padding: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: spin-slow 18s linear infinite;
+    }
+
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #1d4ed8, #020617 60%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e5e7eb;
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .chip {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--muted);
+    }
+
+    .orbit {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .orbit-dot {
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #38bdf8;
+      box-shadow: 0 0 16px rgba(56, 189, 248, 0.9);
+      animation: orbit 16s linear infinite;
+    }
+
+    .orbit-dot:nth-child(2) {
+      background: #a855f7;
+      box-shadow: 0 0 16px rgba(168, 85, 247, 0.9);
+      animation-duration: 22s;
+      animation-direction: reverse;
+    }
+
+    @keyframes orbit {
+      from { transform: rotate(0deg) translateX(140px) rotate(0deg); }
+      to { transform: rotate(360deg) translateX(140px) rotate(-360deg); }
+    }
+
+    .hero-card-footer {
+      margin-top: 0.8rem;
+      padding-top: 0.8rem;
+      border-top: 1px dashed rgba(148, 163, 184, 0.4);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .hero-card-footer span strong {
+      display: block;
+      font-size: 0.85rem;
+      color: #e5e7eb;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 3rem;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 32rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.4rem;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      position: relative;
+      border-radius: 1rem;
+      padding: 1.1rem 1.1rem 1.2rem;
+      background: radial-gradient(circle at top, #020617 0, #020617 45%, #020617 100%);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: transform 0.15s ease, box-shadow 0.15s ease,
+        border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.12), transparent 55%);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      z-index: -1;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 32px rgba(15, 23, 42, 0.9);
+      border-color: rgba(56, 189, 248, 0.7);
+      background: radial-gradient(circle at top, #020617 0, #020617 45%, #020617 100%);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+      background: radial-gradient(circle at 30% 0, #38bdf8, #0f172a);
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.7);
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .card-text {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .card-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      font-size: 0.7rem;
+    }
+
+    .tag {
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--muted);
+    }
+
+    /* Knowledge base */
+    .kb-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.6rem;
+      align-items: flex-start;
+    }
+
+    .kb-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .kb-item {
+      padding: 0.8rem 0.9rem;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+      cursor: default;
+      transition: border 0.15s ease, background 0.15s ease, transform 0.15s ease;
+    }
+
+    .kb-item:hover {
+      border-color: rgba(56, 189, 248, 0.7);
+      background: rgba(15, 23, 42, 0.98);
+      transform: translateY(-1px);
+    }
+
+    .kb-title {
+      font-size: 0.9rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .kb-meta {
+      font-size: 0.7rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .kb-highlight {
+      padding: 1rem;
+      border-radius: 1rem;
+      border: 1px dashed rgba(56, 189, 248, 0.7);
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.12), #020617 60%);
+      font-size: 0.85rem;
+      color: #e0f2fe;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.6rem;
+      align-items: flex-start;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.8rem;
+    }
+
+    .field label {
+      color: var(--muted);
+    }
+
+    .field input,
+    .field textarea {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 0.6rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 0.55rem 0.7rem;
+      color: var(--text);
+      font-size: 0.8rem;
+      outline: none;
+      transition: border 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: rgba(56, 189, 248, 0.9);
+      box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.6);
+      background: rgba(15, 23, 42, 0.98);
+    }
+
+    .field textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .contact-info {
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .contact-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.6);
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 0.75rem;
+      color: #e0f2fe;
+    }
+
+    footer {
+      border-top: 1px solid rgba(30, 64, 175, 0.7);
+      background: radial-gradient(circle at top, #020617 0, #000 70%);
+      padding: 1.2rem 1.25rem 1.6rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      transition: color 0.15s ease;
+    }
+
+    .footer-links a:hover {
+      color: #e5e7eb;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-right {
+        order: -1;
+      }
+      .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .kb-layout,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        padding-inline: 1rem;
+      }
+      .nav-links {
+        display: none;
+      }
+      .hero {
+        padding-top: 1.6rem;
+      }
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
 </head>
-<body class="deep-navy-cyber min-h-screen flex flex-col justify-between relative">
+<body>
+  <!-- Header -->
+  <header>
+    <div class="nav">
+      <div class="logo">
+        <div class="logo-mark"><span>GM</span></div>
+        <span>GMDigiCorp</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#knowledge">Knowledge Hub</a>
+        <a href="#contact">Contact</a>
+        <a href="founder.html">Founder</a>
+      </nav>
+      <a href="#contact" class="nav-cta">Let’s Talk</a>
+    </div>
+  </header>
 
-    <div class="tech-lights"></div>
-
-    <header class="w-full max-w-7xl mx-auto p-6 flex justify-between items-center z-10 animate__animated animate__fadeInDown">
-        <div class="flex items-center">
-            <a href="#" class="text-xl logo-style-header">GM<span>Digi</span>Corp</a>
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="hero-left">
+        <div class="pill">
+          <span class="pill-dot"></span>
+          <span>AI‑driven IT Support • Dubai • Global Remote</span>
         </div>
-        <nav class="hidden md:flex space-x-8 text-xs uppercase tracking-widest font-semibold text-gray-300">
-            <a href="#" class="text-cyan-400 hover:text-white transition">Home</a>
-            <a href="#services-matrix" class="hover:text-cyan-400 transition">Services</a>
-            <a href="#about-founder" class="hover:text-cyan-400 transition">About</a>
-            <a href="mailto:gmdigicorp@gmail.com" class="hover:text-cyan-400 transition">Contact</a>
-        </nav>
-    </header>
+        <h1 class="hero-title">
+          Building the <span>Future of IT Support</span> with AI & Automation
+        </h1>
+        <p class="hero-subtitle">
+          GMDigiCorp blends hands‑on enterprise IT experience with modern AI tools to deliver
+          proactive, self‑healing support for your users, devices, and cloud workloads.
+        </p>
 
-    <main class="w-full max-w-5xl mx-auto px-6 py-8 flex flex-col items-center text-center z-10 justify-center space-y-8">
-        
-        <div class="animate__animated animate__fadeInUp">
-            <p class="text-xs text-cyan-400 font-bold tracking-widest uppercase mb-1">Next-Generation Managed IT Infrastructure</p>
-            <h1 class="text-4xl md:text-6xl font-extrabold tech-heading text-white tracking-wide uppercase leading-tight">
-                Building The Future <br class="hidden md:inline"> Of IT Technology
-            </h1>
-            <p class="text-xs md:text-sm text-gray-400 font-light mt-3 max-w-xl mx-auto leading-relaxed">
-                Empowering global businesses with bleeding-edge enterprise digital infrastructure, identity governance, and modern cloud alignment.
-            </p>
-        </div>
-
-        <div class="w-full flex justify-center items-center px-4 animate__animated animate__zoomIn">
-            <img src="logo.png" alt="GMDigiCorp Official Banner Branding" class="premium-banner-logo h-auto object-contain max-h-36 md:max-h-40">
-        </div>
-
-        <div id="about-founder" class="relative w-full max-w-md flex flex-col items-center py-2 animate__animated animate__fadeInUp">
-            
-            <div class="absolute w-80 h-80 border-2 border-cyan-500/20 rounded-full hud-rotate pointer-events-none"></div>
-            <div class="absolute w-96 h-96 border border-blue-500/15 border-dashed rounded-full hud-rotate pointer-events-none" style="animation-direction: reverse;"></div>
-
-            <div class="w-64 h-64 md:w-72 md:h-72 bg-gradient-to-tr from-blue-500 via-cyan-400 to-indigo-600 p-[3px] cyber-octagon-frame shadow-[0_0_55px_rgba(6,182,212,0.5)]">
-                <div class="w-full h-full bg-slate-950 cyber-octagon-frame overflow-hidden">
-                    <img src="founder.png" alt="MD Golam Mostofa - Founder of GMDigiCorp" class="w-full h-full object-cover object-center transform hover:scale-105 transition duration-500">
-                </div>
-            </div>
-
-            <div class="mt-5 bg-slate-950/95 border border-cyan-500/40 px-8 py-2 rounded-full backdrop-blur-md shadow-2xl">
-                <p class="text-[10px] text-cyan-400 tracking-widest uppercase font-bold">Founder & Visionary</p>
-                <h4 class="text-base font-bold tech-heading text-white tracking-wide mt-0.5">MD Golam Mostofa</h4>
-            </div>
+        <div class="hero-badges">
+          <span class="badge">AI‑assisted Troubleshooting</span>
+          <span class="badge">Microsoft 365 & Intune</span>
+          <span class="badge">Secure Remote Support</span>
+          <span class="badge">24/7 Knowledge‑first Approach</span>
         </div>
 
-        <div class="pt-2 animate__animated animate__fadeInUp">
-            <a href="#services-matrix" class="inline-block bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white px-14 py-4 rounded-xl text-xs font-bold tracking-widest uppercase shadow-lg shadow-cyan-500/20 transition transform hover:-translate-y-0.5 duration-200">
-                Explore Core Capabilities <i class="fa-solid fa-arrow-down ml-2 text-[10px] animate-bounce"></i>
-            </a>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+            Explore Services
+          </button>
+          <a href="founder.html" class="btn-ghost">
+            Meet the Founder →
+          </a>
         </div>
 
-        <section id="services-matrix" class="w-full max-w-5xl pt-16 pb-6 text-left space-y-8 z-10">
-            <div class="text-center md:text-left border-l-4 border-cyan-500 pl-4">
-                <h3 class="text-xl md:text-2xl font-bold tech-heading text-white uppercase tracking-wider">Enterprise Service Catalog</h3>
-                <p class="text-xs text-gray-400 mt-1">High-performance architectural competencies engineered for scalability and ultimate network security.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 w-full">
-                <div class="expert-card p-6 rounded-2xl flex gap-4 items-start">
-                    <div class="p-3 bg-blue-500/10 border border-blue-500/30 rounded-xl text-blue-400 mt-1 shadow-inner"><i class="fa-solid fa-cloud text-xl"></i></div>
-                    <div class="space-y-1.5">
-                        <h4 class="text-sm font-bold text-white tech-heading tracking-wide">Cloud Architecture & Administration</h4>
-                        <p class="text-xs text-gray-400 font-light leading-relaxed">End-to-end integration of Microsoft 365 environments, secure identity synchronization, hybrid directories, and centralized productivity deployment blueprints.</p>
-                    </div>
-                </div>
-
-                <div class="expert-card p-6 rounded-2xl flex gap-4 items-start">
-                    <div class="p-3 bg-cyan-500/10 border border-cyan-500/30 rounded-xl text-cyan-400 mt-1 shadow-inner"><i class="fa-solid fa-network-wired text-xl"></i></div>
-                    <div class="space-y-1.5">
-                        <h4 class="text-sm font-bold text-white tech-heading tracking-wide">Modern Workplace Integration</h4>
-                        <p class="text-xs text-gray-400 font-light leading-relaxed">Enterprise management with Microsoft Intune, automated workstation provisioning via Windows Autopilot, and robust device configuration profiles.</p>
-                    </div>
-                </div>
-
-                <div class="expert-card p-6 rounded-2xl flex gap-4 items-start">
-                    <div class="p-3 bg-indigo-500/10 border border-indigo-500/30 rounded-xl text-indigo-400 mt-1 shadow-inner"><i class="fa-solid fa-shield-halved text-xl"></i></div>
-                    <div class="space-y-1.5">
-                        <h4 class="text-sm font-bold text-white tech-heading tracking-wide">Cybersecurity & Identity Governance</h4>
-                        <p class="text-xs text-gray-400 font-light leading-relaxed">Implementing zero-trust access parameters via Microsoft Entra ID (Active Directory), multi-factor authentication policies, and secure network operational boundaries.</p>
-                    </div>
-                </div>
-
-                <div class="expert-card p-6 rounded-2xl flex gap-4 items-start">
-                    <div class="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-400 mt-1 shadow-inner"><i class="fa-solid fa-code text-xl"></i></div>
-                    <div class="space-y-1.5">
-                        <h4 class="text-sm font-bold text-white tech-heading tracking-wide">Modern Web & Systems Operations</h4>
-                        <p class="text-xs text-gray-400 font-light leading-relaxed">Architecting lightning-fast responsive administrative landing layers, software deployment mechanisms, and managing ongoing enterprise IT support lifecycles.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <a href="https://wa.me/971522230991?text=Hello%20GMDigiCorp,%20I%20am%20interested%20in%20your%20IT%20Services." target="_blank" class="whatsapp-float animate__animated animate__bounceInUp" title="Chat via WhatsApp with Expert">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <footer class="w-full border-t border-slate-900/80 bg-slate-950/95 backdrop-blur-md py-5 px-6 z-10">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] text-gray-400">
-            <div class="flex flex-wrap items-center justify-center gap-4">
-                <span>&copy; 2026 <span class="text-white font-semibold tech-heading">GMDigiCorp</span></span>
-                <a href="mailto:gmdigicorp@gmail.com" class="hover:text-blue-400 transition flex items-center gap-1"><i class="fa-solid fa-envelope text-cyan-400"></i> gmdigicorp@gmail.com</a>
-                <span class="flex items-center gap-1"><i class="fa-solid fa-location-dot text-cyan-400"></i> Dubai, UAE</span>
-            </div>
-            <div class="flex space-x-4 text-sm text-gray-400">
-                <a href="#" class="hover:text-cyan-400 transition"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="hover:text-cyan-400 transition"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="hover:text-cyan-400 transition"><i class="fa-brands fa-linkedin"></i></a>
-            </div>
+        <div class="hero-metrics">
+          <div class="metric">
+            <span>5+ yrs</span>
+            Enterprise IT Support
+          </div>
+          <div class="metric">
+            <span>Multi‑Cloud</span>
+            M365 • AD • VPN • Intune
+          </div>
+          <div class="metric">
+            <span>AI‑Ready</span>
+            Knowledge‑driven SOPs
+          </div>
         </div>
-    </footer>
+      </div>
 
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="founder-tag">Founder & Visionary</div>
+          <div class="founder-name">Md Golam Mostofa</div>
+          <div class="founder-role">IT Support Engineer • AI‑aligned Service Design</div>
+
+          <div class="avatar-ring">
+            <div class="avatar-inner">GM</div>
+          </div>
+
+          <div class="hero-chip-row">
+            <span class="chip">IT Support Engineer</span>
+            <span class="chip">Active Directory</span>
+            <span class="chip">Office 365</span>
+            <span class="chip">Remote Support</span>
+          </div>
+
+          <p style="font-size:0.8rem;color:var(--muted);text-align:center;">
+            “From BSOD to cloud outages—my goal is simple: predictable, documented, AI‑friendly IT support.”
+          </p>
+
+          <div class="orbit">
+            <div class="orbit-dot"></div>
+            <div class="orbit-dot"></div>
+          </div>
+
+          <div class="hero-card-footer">
+            <span>
+              <strong>Dubai, UAE</strong>
+              Global remote support
+            </span>
+            <span>
+              <strong>5+ Years</strong>
+              Enterprise & Retail IT
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="section-label">Services</div>
+      <h2 class="section-title">AI‑aligned IT Support & Automation</h2>
+      <p class="section-subtitle">
+        We design IT support that your users love and your future AI agents can understand:
+        structured, documented, and automation‑ready from day one.
+      </p>
+
+      <div class="grid grid-3">
+        <article class="card">
+          <div class="card-icon">☁️</div>
+          <h3 class="card-title">Cloud & Microsoft 365 Support</h3>
+          <p class="card-text">
+            End‑to‑end support for Microsoft 365, Outlook, OneDrive, Teams, and identity:
+            account lifecycle, access, and secure collaboration.
+          </p>
+          <div class="card-tag-row">
+            <span class="tag">M365</span>
+            <span class="tag">Outlook</span>
+            <span class="tag">Entra ID</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🖥️</div>
+          <h3 class="card-title">Endpoint & Remote Support</h3>
+          <p class="card-text">
+            Proactive desktop, laptop, and POS support with remote tools, Intune/SCCM,
+            and clear SOPs for AI‑assisted triage.
+          </p>
+          <div class="card-tag-row">
+            <span class="tag">Windows</span>
+            <span class="tag">Intune</span>
+            <span class="tag">SCCM</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🔐</div>
+          <h3 class="card-title">Secure Access & Identity</h3>
+          <p class="card-text">
+            AD, Entra ID, MFA, VPN, and role‑based access—implemented with audit‑friendly
+            documentation and AI‑readable policies.
+          </p>
+          <div class="card-tag-row">
+            <span class="tag">AD</span>
+            <span class="tag">MFA</span>
+            <span class="tag">VPN</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🤖</div>
+          <h3 class="card-title">AI‑Ready Knowledge Base</h3>
+          <p class="card-text">
+            We convert tribal knowledge into structured articles, runbooks, and SOPs that
+            can power chatbots and AI copilots.
+          </p>
+          <div class="card-tag-row">
+            <span class="tag">SOPs</span>
+            <span class="tag">Runbooks</span>
+            <span class="tag">KB Articles</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">📡</div>
+          <h3 class="card-title">Network & Store IT Support</h3>
+          <p class="card-text">
+            LAN/WAN, Wi‑Fi, POS, and retail store infrastructure support—designed for
+            uptime, observability, and quick incident response.
+          </p>
+          <div class="card-tag-row">
+            <span class="tag">LAN/WAN</span>
+            <span class="tag">POS</span>
+            <span class="tag">Retail IT</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">📊</div>
+          <h3 class="card-title">Service Desk & SLA Design</h3>
+          <p class="card-text">
+            Ticket workflows, priority matrices, and SLA definitions that make sense to
+            humans—and to AI‑driven analytics.
+          </p>
+          <div class="card-tag-row">
+            <span class="tag">ServiceNow</span>
+            <span class="tag">SLA</span>
+            <span class="tag">Reporting</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Knowledge Hub -->
+    <section id="knowledge">
+      <div class="section-label">Knowledge Hub</div>
+      <h2 class="section-title">IT Support, Explained for Humans & AI</h2>
+      <p class="section-subtitle">
+        Short, practical explainers based on real incidents—from BSODs and VPN failures
+        to Outlook issues and POS downtime.
+      </p>
+
+      <div class="kb-layout">
+        <div class="kb-list">
+          <div class="kb-item">
+            <div class="kb-title">How AI can speed up Level‑1 IT Support</div>
+            <div class="kb-meta">
+              <span>AI • Service Desk • Automation</span>
+              <span>3 min read</span>
+            </div>
+          </div>
+          <div class="kb-item">
+            <div class="kb-title">Designing ticket notes that future AI agents can understand</div>
+            <div class="kb-meta">
+              <span>Documentation • SOP</span>
+              <span>5 min read</span>
+            </div>
+          </div>
+          <div class="kb-item">
+            <div class="kb-title">From Outlook chaos to clean, predictable email support</div>
+            <div class="kb-meta">
+              <span>Outlook • M365</span>
+              <span>4 min read</span>
+            </div>
+          </div>
+          <div class="kb-item">
+            <div class="kb-title">Retail store IT: keeping POS, Wi‑Fi & printers always ready</div>
+            <div class="kb-meta">
+              <span>Retail • POS • Network</span>
+              <span>4 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="kb-highlight">
+          <strong>Knowledge‑first IT Support</strong><br /><br />
+          Every ticket, incident, and fix is an opportunity to teach both your team and your
+          future AI copilots. GMDigiCorp focuses on:
+          <ul style="margin-top:0.5rem;padding-left:1.1rem;">
+            <li>Clear root‑cause notes instead of “issue resolved”.</li>
+            <li>Standard fields for device, user, location, and impact.</li>
+            <li>Reusable troubleshooting flows that can be automated later.</li>
+          </ul>
+          <br />
+          Want this mindset in your IT? Let’s design your knowledge base together.
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Let’s design your next‑gen IT Support</h2>
+      <p class="section-subtitle">
+        Share your current IT landscape—users, locations, tools—and we’ll propose a
+        practical, AI‑aligned support model.
+      </p>
+
+      <div class="contact-grid">
+        <form class="contact-form">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your full name" />
+          </div>
+          <div class="field">
+            <label for="email">Work Email</label>
+            <input id="email" type="email" placeholder="you@company.com" />
+          </div>
+          <div class="field">
+            <label for="company">Company / Organization</label>
+            <input id="company" type="text" placeholder="Company name" />
+          </div>
+          <div class="field">
+            <label for="message">What IT challenges are you facing?</label>
+            <textarea id="message" placeholder="Briefly describe your current IT support setup and pain points."></textarea>
+          </div>
+          <button type="button" class="btn-primary">
+            Send (static demo)
+          </button>
+          <span style="font-size:0.7rem;color:var(--muted);">
+            This is a static demo form. Connect it to your backend or form service (e.g. Formspree, Netlify Forms).
+          </span>
+        </form>
+
+        <div class="contact-info">
+          <div class="contact-pill">
+            📍 Dubai, United Arab Emirates (UAE)
+          </div>
+          <div>
+            <strong>Direct Contact</strong><br />
+            Phone: +971 52 223 0991<br />
+            Email: golammostofa239@gmail.com
+          </div>
+          <div>
+            <strong>LinkedIn</strong><br />
+            <span>Search: “Md Golam Mostofa – IT Support Engineer”</span>
+          </div>
+          <div>
+            <strong>Focus Areas</strong><br />
+            Enterprise IT Support • Retail & Store IT • Cloud & M365 • AI‑ready documentation
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© <span id="year"></span> GMDigiCorp. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="founder.html">Founder</a>
+        <a href="#knowledge">Knowledge Hub</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
