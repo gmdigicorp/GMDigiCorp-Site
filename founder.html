@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Founder & Visionary | GMDigiCorp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #0f172a 0, #020617 45%, #000 100%);
+      color: #e5e7eb;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.95),
+        rgba(15, 23, 42, 0.7),
+        transparent
+      );
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .nav {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0.9rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .logo-mark {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: conic-gradient(
+        from 180deg,
+        #38bdf8,
+        #a855f7,
+        #22c55e,
+        #38bdf8
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.7);
+    }
+
+    .logo-mark span {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #0b1120;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .nav-links a {
+      color: #9ca3af;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: #e5e7eb;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2.2rem 1.25rem 3rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.8);
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-bottom: 0.9rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #22c55e 0, #16a34a 40%, #052e16 100%);
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .title {
+      font-size: clamp(1.9rem, 2.4vw + 1rem, 2.4rem);
+      margin-bottom: 0.4rem;
+    }
+
+    .title span {
+      background: linear-gradient(to right, #38bdf8, #a855f7);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: #9ca3af;
+      margin-bottom: 1.4rem;
+      max-width: 32rem;
+    }
+
+    .bio-block {
+      font-size: 0.9rem;
+      color: #d1d5db;
+      line-height: 1.6;
+      margin-bottom: 1.4rem;
+    }
+
+    .highlight {
+      padding: 0.9rem 1rem;
+      border-radius: 0.9rem;
+      border: 1px dashed rgba(56, 189, 248, 0.7);
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.12), #020617 60%);
+      font-size: 0.85rem;
+      color: #e0f2fe;
+      margin-bottom: 1.4rem;
+    }
+
+    .section-title {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .list {
+      font-size: 0.85rem;
+      color: #9ca3af;
+      padding-left: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .list li {
+      margin-bottom: 0.25rem;
+    }
+
+    .right-card {
+      position: relative;
+      border-radius: 1.2rem;
+      padding: 1.3rem 1.3rem 1.4rem;
+      background: radial-gradient(circle at top, #020617 0, #020617 45%, #020617 100%);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow:
+        0 0 40px rgba(15, 23, 42, 0.9),
+        0 0 80px rgba(56, 189, 248, 0.25);
+      overflow: hidden;
+    }
+
+    .right-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.18), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(168, 85, 247, 0.18), transparent 55%);
+      opacity: 0.8;
+      z-index: -1;
+    }
+
+    .avatar-ring {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 1rem;
+      border-radius: 999px;
+      background:
+        conic-gradient(from 180deg, #38bdf8, #a855f7, #22c55e, #38bdf8);
+      padding: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: spin-slow 18s linear infinite;
+    }
+
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #1d4ed8, #020617 60%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e5e7eb;
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .name {
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+
+    .role {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-bottom: 0.8rem;
+    }
+
+    .info-row {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-bottom: 0.6rem;
+    }
+
+    .info-row strong {
+      color: #e5e7eb;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.8rem 0 1rem;
+      justify-content: center;
+    }
+
+    .chip {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.9);
+      color: #9ca3af;
+    }
+
+    .cta {
+      margin-top: 0.8rem;
+      padding-top: 0.8rem;
+      border-top: 1px dashed rgba(148, 163, 184, 0.4);
+      font-size: 0.8rem;
+      color: #9ca3af;
+      text-align: center;
+    }
+
+    .cta a {
+      color: #38bdf8;
+    }
+
+    footer {
+      border-top: 1px solid rgba(30, 64, 175, 0.7);
+      background: radial-gradient(circle at top, #020617 0, #000 70%);
+      padding: 1.1rem 1.25rem 1.4rem;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-top: 2rem;
+    }
+
+    .footer-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 800px) {
+      .layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">
+        <div class="logo-mark"><span>GM</span></div>
+        <span>GMDigiCorp</span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#knowledge">Knowledge Hub</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="pill">
+      <span class="pill-dot"></span>
+      <span>Founder & Visionary • IT Support Engineer • Dubai, UAE</span>
+    </div>
+
+    <div class="layout">
+      <section>
+        <h1 class="title">
+          Meet <span>Md Golam Mostofa</span>
+        </h1>
+        <p class="subtitle">
+          Dedicated and customer‑focused IT Support Engineer with 5+ years of experience
+          across enterprise, telecom, and retail environments—now building GMDigiCorp as
+          an AI‑aligned IT support brand.
+        </p>
+
+        <div class="bio-block">
+          Md Golam Mostofa has worked across multiple high‑pressure environments, including
+          enterprise IT projects in Dubai, large‑scale telecom support at Reliance Jio, and
+          retail store operations with Landmark Group. His core strength is turning messy,
+          ad‑hoc troubleshooting into clear, repeatable, and documented support processes.
+        </div>
+
+        <div class="highlight">
+          “In every ticket, I see two things: a user who needs help now, and a pattern that
+          can be documented and automated later. GMDigiCorp is my way of combining both—
+          human‑first support today, AI‑ready knowledge for tomorrow.”
+        </div>
+
+        <h2 class="section-title">Experience Snapshot</h2>
+        <ul class="list">
+          <li><strong>Apex Employment Services (TCS‑E& Project), Dubai</strong> – L1/L2 IT support, incident & service request handling, Microsoft 365, AD, VPN, and security patching.</li>
+          <li><strong>HCL Technologies, Chennai</strong> – Global IT support with SCCM, Intune, MDM, ServiceNow, MFA, VPN, and user lifecycle management.</li>
+          <li><strong>Reliance Jio, Mumbai</strong> – Frontline technical support for laptops, desktops, printers, BitLocker, LAN/Wi‑Fi, and Office 365.</li>
+          <li><strong>Landmark Group, Kolkata</strong> – Store IT executive for POS, printers, scanners, and network infrastructure across retail brands.</li>
+        </ul>
+
+        <h2 class="section-title">Technical Focus</h2>
+        <ul class="list">
+          <li>IT Support, Desktop & End‑User Support, Remote Support</li>
+          <li>Active Directory, Entra ID, MFA, VPN, LAN/WAN</li>
+          <li>Microsoft 365, Outlook, Intune, SCCM, Ticketing Systems (ServiceNow)</li>
+          <li>Retail IT, POS systems, printers, and store infrastructure</li>
+        </ul>
+
+        <h2 class="section-title">Education & Certifications</h2>
+        <ul class="list">
+          <li>B.Tech in Mechanical Engineering – Maulana Abul Kalam Azad University of Technology, India (2022)</li>
+          <li>Diploma in Engineering – Mechanical, West Bengal State Council of Technical Education (2017)</li>
+          <li>IT Service Desk: Service Management – HDI (LinkedIn)</li>
+          <li>Microsoft Intune – Mobile Device Management (Udemy)</li>
+          <li>Diploma in Computer Hardware & Maintenance – NCL&D</li>
+          <li>CCNA 200‑301 Network Fundamentals – Simplilearn</li>
+        </ul>
+      </section>
+
+      <aside class="right-card">
+        <div class="avatar-ring">
+          <div class="avatar-inner">GM</div>
+        </div>
+        <div class="name">Md Golam Mostofa</div>
+        <div class="role">Founder & Visionary • IT Support Engineer</div>
+
+        <div class="info-row">
+          <strong>Location:</strong> Dubai, United Arab Emirates (UAE)
+        </div>
+        <div class="info-row">
+          <strong>Experience:</strong> 5+ years in IT Support, Telecom & Retail IT
+        </div>
+        <div class="info-row">
+          <strong>Languages:</strong> Hindi, English
+        </div>
+        <div class="info-row">
+          <strong>Contact:</strong> +971 52 223 0991 • golammostofa239@gmail.com
+        </div>
+
+        <div class="chip-row">
+          <span class="chip">IT Support Engineer</span>
+          <span class="chip">Active Directory</span>
+          <span class="chip">Office 365</span>
+          <span class="chip">Remote Support</span>
+          <span class="chip">LAN/WAN</span>
+        </div>
+
+        <div class="cta">
+          Looking to collaborate or hire GMDigiCorp?<br />
+          Start from the <a href="index.html#contact">contact section</a> on the main page.
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© <span id="year"></span> GMDigiCorp. All rights reserved.</span>
+      <span>Designed by Md Golam Mostofa as a technology & AI‑aligned IT support brand.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
