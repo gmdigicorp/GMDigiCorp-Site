@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Founder & Visionary | GMDigiCorp</title>
+  <title>Founder & Visionary | GMDigiCorp – Md Golam Mostofa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Meet Md Golam Mostofa, Founder & Visionary of GMDigiCorp – AI‑aligned IT Support Engineer with 5+ years of enterprise, telecom, and retail IT experience." />
   <style>
     body {
       margin: 0;
@@ -47,33 +48,17 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.9rem;
     }
 
-    .logo-mark {
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
-      background: conic-gradient(
-        from 180deg,
-        #38bdf8,
-        #a855f7,
-        #22c55e,
-        #38bdf8
-      );
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 20px rgba(56, 189, 248, 0.7);
+    .logo img {
+      height: 38px;
+      filter: drop-shadow(0 0 12px rgba(56,189,248,0.6));
+      transition: 0.3s ease;
     }
 
-    .logo-mark span {
-      font-size: 0.7rem;
-      font-weight: 800;
-      color: #0b1120;
+    .logo img:hover {
+      filter: drop-shadow(0 0 20px rgba(56,189,248,1));
+      transform: scale(1.05);
     }
 
     .nav-links {
@@ -84,6 +69,7 @@
     .nav-links a {
       color: #9ca3af;
       position: relative;
+      transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
@@ -214,18 +200,12 @@
       animation: spin-slow 18s linear infinite;
     }
 
-    .avatar-inner {
+    .avatar-ring img {
       width: 100%;
       height: 100%;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #1d4ed8, #020617 60%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #e5e7eb;
-      font-size: 2.4rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      object-fit: cover;
+      box-shadow: 0 0 25px rgba(56,189,248,0.6);
     }
 
     @keyframes spin-slow {
@@ -322,8 +302,7 @@
   <header>
     <div class="nav">
       <div class="logo">
-        <div class="logo-mark"><span>GM</span></div>
-        <span>GMDigiCorp</span>
+        <img src="logo.png" alt="GMDigiCorp Logo">
       </div>
       <nav class="nav-links">
         <a href="index.html">Home</a>
@@ -355,7 +334,8 @@
           Md Golam Mostofa has worked across multiple high‑pressure environments, including
           enterprise IT projects in Dubai, large‑scale telecom support at Reliance Jio, and
           retail store operations with Landmark Group. His core strength is turning messy,
-          ad‑hoc troubleshooting into clear, repeatable, and documented support processes.
+          ad‑hoc troubleshooting into clear, repeatable, and documented support processes
+          that are ready for automation and AI.
         </div>
 
         <div class="highlight">
@@ -366,10 +346,11 @@
 
         <h2 class="section-title">Experience Snapshot</h2>
         <ul class="list">
-          <li><strong>Apex Employment Services (TCS‑E& Project), Dubai</strong> – L1/L2 IT support, incident & service request handling, Microsoft 365, AD, VPN, and security patching.</li>
+          <li><strong>Apex Employment Services (TCS‑E& Project), Dubai</strong> – L1/L2 IT support, incident & service request handling, Microsoft 365, Active Directory, VPN, and security patching.</li>
           <li><strong>HCL Technologies, Chennai</strong> – Global IT support with SCCM, Intune, MDM, ServiceNow, MFA, VPN, and user lifecycle management.</li>
           <li><strong>Reliance Jio, Mumbai</strong> – Frontline technical support for laptops, desktops, printers, BitLocker, LAN/Wi‑Fi, and Office 365.</li>
           <li><strong>Landmark Group, Kolkata</strong> – Store IT executive for POS, printers, scanners, and network infrastructure across retail brands.</li>
+          <li><strong>Jio (Kutumbhcare), Kolkata</strong> – OS, network, and software troubleshooting with strong reporting and analytical support for management.</li>
         </ul>
 
         <h2 class="section-title">Technical Focus</h2>
@@ -378,6 +359,7 @@
           <li>Active Directory, Entra ID, MFA, VPN, LAN/WAN</li>
           <li>Microsoft 365, Outlook, Intune, SCCM, Ticketing Systems (ServiceNow)</li>
           <li>Retail IT, POS systems, printers, and store infrastructure</li>
+          <li>Knowledge‑base creation, SOPs, and AI‑ready documentation</li>
         </ul>
 
         <h2 class="section-title">Education & Certifications</h2>
@@ -393,7 +375,7 @@
 
       <aside class="right-card">
         <div class="avatar-ring">
-          <div class="avatar-inner">GM</div>
+          <img src="founder.png" alt="Md Golam Mostofa">
         </div>
         <div class="name">Md Golam Mostofa</div>
         <div class="role">Founder & Visionary • IT Support Engineer</div>
@@ -430,7 +412,7 @@
   <footer>
     <div class="footer-inner">
       <span>© <span id="year"></span> GMDigiCorp. All rights reserved.</span>
-      <span>Designed by Md Golam Mostofa as a technology & AI‑aligned IT support brand.</span>
+      <span>Designed by Md Golam Mostofa as an AI‑aligned IT support brand.</span>
     </div>
   </footer>
 
