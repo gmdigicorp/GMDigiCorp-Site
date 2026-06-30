@@ -2,17 +2,33 @@
 ‎<html lang="en">
 ‎<head>
 ‎  <meta charset="UTF-8" />
-‎  <title>Founder & Visionary | GMDigiCorp – Md Golam Mostofa</title>
+‎  <title>GMDigiCorp | AI‑Powered IT Operation Support & Automation</title>
 ‎  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-‎  <meta name="description" content="Meet Md Golam Mostofa, Founder & Visionary of GMDigiCorp – AI‑aligned IT Operation Engineer with 5+ years of enterprise, telecom, and retail IT experience." />
+‎  <meta name="description" content="GMDigiCorp – AI‑aligned IT support, Microsoft 365, Intune, Active Directory, VPN, POS & Retail IT, designed for humans and future AI copilots." />
 ‎  <style>
-‎    body {
+‎    :root {
+‎      --bg: #020617;
+‎      --primary: #38bdf8;
+‎      --accent: #a855f7;
+‎      --text: #e5e7eb;
+‎      --muted: #9ca3af;
+‎      --border: rgba(148, 163, 184, 0.25);
+‎    }
+‎
+‎    * {
 ‎      margin: 0;
+‎      padding: 0;
+‎      box-sizing: border-box;
 ‎      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
 ‎        sans-serif;
-‎      background: radial-gradient(circle at top, #0f172a 0, #020617 45%, #000 100%);
-‎      color: #e5e7eb;
+‎    }
+‎
+‎    body {
+‎      background:
+‎        radial-gradient(circle at top, #0f172a 0, #020617 45%, #000 100%);
+‎      color: var(--text);
 ‎      min-height: 100vh;
+‎      overflow-x: hidden;
 ‎    }
 ‎
 ‎    a {
@@ -20,10 +36,11 @@
 ‎      text-decoration: none;
 ‎    }
 ‎
+‎    /* Header */
 ‎    header {
 ‎      position: sticky;
 ‎      top: 0;
-‎      z-index: 20;
+‎      z-index: 50;
 ‎      backdrop-filter: blur(18px);
 ‎      background: linear-gradient(
 ‎        to bottom,
@@ -31,17 +48,16 @@
 ‎        rgba(15, 23, 42, 0.7),
 ‎        transparent
 ‎      );
-‎      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+‎      border-bottom: 1px solid var(--border);
 ‎    }
 ‎
 ‎    .nav {
-‎      max-width: 960px;
+‎      max-width: 1120px;
 ‎      margin: 0 auto;
 ‎      padding: 0.9rem 1.25rem;
 ‎      display: flex;
 ‎      align-items: center;
 ‎      justify-content: space-between;
-‎      font-size: 0.9rem;
 ‎    }
 ‎
 ‎    .logo {
@@ -51,7 +67,7 @@
 ‎    }
 ‎
 ‎    .logo img {
-‎      height: 38px;
+‎      height: 42px;
 ‎      filter: drop-shadow(0 0 12px rgba(56,189,248,0.6));
 ‎      transition: 0.3s ease;
 ‎    }
@@ -63,23 +79,86 @@
 ‎
 ‎    .nav-links {
 ‎      display: flex;
-‎      gap: 1.2rem;
+‎      gap: 1.5rem;
+‎      font-size: 0.9rem;
 ‎    }
 ‎
 ‎    .nav-links a {
-‎      color: #9ca3af;
 ‎      position: relative;
+‎      color: var(--muted);
 ‎      transition: color 0.2s ease;
 ‎    }
 ‎
+‎    .nav-links a::after {
+‎      content: "";
+‎      position: absolute;
+‎      left: 0;
+‎      bottom: -4px;
+‎      width: 0;
+‎      height: 2px;
+‎      border-radius: 999px;
+‎      background: linear-gradient(to right, var(--primary), var(--accent));
+‎      transition: width 0.25s ease;
+‎    }
+‎
 ‎    .nav-links a:hover {
-‎      color: #e5e7eb;
+‎      color: var(--text);
+‎    }
+‎
+‎    .nav-links a:hover::after {
+‎      width: 100%;
+‎    }
+‎
+‎    .nav-cta {
+‎      padding: 0.45rem 0.9rem;
+‎      border-radius: 999px;
+‎      border: 1px solid rgba(56, 189, 248, 0.6);
+‎      background: radial-gradient(circle at top left, #0ea5e9 0, #020617 55%);
+‎      color: #e0f2fe;
+‎      font-size: 0.8rem;
+‎      text-transform: uppercase;
+‎      letter-spacing: 0.12em;
+‎      font-weight: 600;
+‎      box-shadow: 0 0 18px rgba(56, 189, 248, 0.4);
+‎      transition: transform 0.15s ease, box-shadow 0.15s ease,
+‎        background 0.15s ease;
+‎    }
+‎
+‎    .nav-cta:hover {
+‎      transform: translateY(-1px);
+‎      box-shadow: 0 0 26px rgba(56, 189, 248, 0.7);
+‎      background: radial-gradient(circle at top left, #22c55e 0, #020617 55%);
 ‎    }
 ‎
 ‎    main {
-‎      max-width: 960px;
+‎      max-width: 1120px;
 ‎      margin: 0 auto;
-‎      padding: 2.2rem 1.25rem 3rem;
+‎      padding: 1.5rem 1.25rem 3rem;
+‎    }
+‎
+‎    /* Hero */
+‎    .hero {
+‎      display: grid;
+‎      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+‎      gap: 2.5rem;
+‎      align-items: center;
+‎      padding: 2.5rem 0 3rem;
+‎      position: relative;
+‎    }
+‎
+‎    .hero::before {
+‎      content: "";
+‎      position: absolute;
+‎      inset: -120px;
+‎      background:
+‎        radial-gradient(circle at 10% 0, rgba(56, 189, 248, 0.18), transparent 55%),
+‎        radial-gradient(circle at 90% 0, rgba(168, 85, 247, 0.18), transparent 55%);
+‎      opacity: 0.9;
+‎      z-index: -1;
+‎    }
+‎
+‎    .hero-left {
+‎      position: relative;
 ‎    }
 ‎
 ‎    .pill {
@@ -91,7 +170,7 @@
 ‎      border: 1px solid rgba(148, 163, 184, 0.4);
 ‎      background: rgba(15, 23, 42, 0.8);
 ‎      font-size: 0.75rem;
-‎      color: #9ca3af;
+‎      color: var(--muted);
 ‎      margin-bottom: 0.9rem;
 ‎      backdrop-filter: blur(10px);
 ‎    }
@@ -104,68 +183,117 @@
 ‎      box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
 ‎    }
 ‎
-‎    .layout {
-‎      display: grid;
-‎      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-‎      gap: 2rem;
-‎      align-items: flex-start;
+‎    .hero-title {
+‎      font-size: clamp(2.2rem, 3vw + 1.2rem, 3.1rem);
+‎      line-height: 1.1;
+‎      margin-bottom: 0.7rem;
 ‎    }
 ‎
-‎    .title {
-‎      font-size: clamp(1.9rem, 2.4vw + 1rem, 2.4rem);
-‎      margin-bottom: 0.4rem;
-‎    }
-‎
-‎    .title span {
+‎    .hero-title span {
 ‎      background: linear-gradient(to right, #38bdf8, #a855f7);
 ‎      -webkit-background-clip: text;
 ‎      color: transparent;
 ‎    }
 ‎
-‎    .subtitle {
-‎      font-size: 0.95rem;
-‎      color: #9ca3af;
-‎      margin-bottom: 1.4rem;
-‎      max-width: 32rem;
-‎    }
-‎
-‎    .bio-block {
-‎      font-size: 0.9rem;
-‎      color: #d1d5db;
-‎      line-height: 1.6;
-‎      margin-bottom: 1.4rem;
-‎    }
-‎
-‎    .highlight {
-‎      padding: 0.9rem 1rem;
-‎      border-radius: 0.9rem;
-‎      border: 1px dashed rgba(56, 189, 248, 0.7);
-‎      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.12), #020617 60%);
-‎      font-size: 0.85rem;
-‎      color: #e0f2fe;
-‎      margin-bottom: 1.4rem;
-‎    }
-‎
-‎    .section-title {
+‎    .hero-subtitle {
 ‎      font-size: 1rem;
-‎      margin-bottom: 0.4rem;
+‎      color: var(--muted);
+‎      max-width: 32rem;
+‎      margin-bottom: 1.4rem;
 ‎    }
 ‎
-‎    .list {
+‎    .hero-badges {
+‎      display: flex;
+‎      flex-wrap: wrap;
+‎      gap: 0.6rem;
+‎      margin-bottom: 1.6rem;
+‎    }
+‎
+‎    .badge {
+‎      padding: 0.25rem 0.7rem;
+‎      border-radius: 999px;
+‎      border: 1px solid rgba(56, 189, 248, 0.4);
+‎      background: rgba(15, 23, 42, 0.9);
+‎      font-size: 0.75rem;
+‎      color: #e0f2fe;
+‎    }
+‎
+‎    .hero-actions {
+‎      display: flex;
+‎      flex-wrap: wrap;
+‎      gap: 0.8rem;
+‎      align-items: center;
+‎      margin-bottom: 1.4rem;
+‎    }
+‎
+‎    .btn-primary {
+‎      padding: 0.7rem 1.4rem;
+‎      border-radius: 999px;
+‎      border: none;
+‎      background: linear-gradient(135deg, #38bdf8, #0ea5e9, #22c55e);
+‎      color: #0b1120;
+‎      font-weight: 600;
+‎      font-size: 0.9rem;
+‎      letter-spacing: 0.06em;
+‎      text-transform: uppercase;
+‎      cursor: pointer;
+‎      box-shadow: 0 0 24px rgba(56, 189, 248, 0.7);
+‎      transition: transform 0.15s ease, box-shadow 0.15s ease;
+‎    }
+‎
+‎    .btn-primary:hover {
+‎      transform: translateY(-1px) scale(1.01);
+‎      box-shadow: 0 0 32px rgba(56, 189, 248, 0.9);
+‎    }
+‎
+‎    .btn-ghost {
+‎      padding: 0.7rem 1.1rem;
+‎      border-radius: 999px;
+‎      border: 1px solid rgba(148, 163, 184, 0.5);
+‎      background: rgba(15, 23, 42, 0.8);
+‎      color: var(--muted);
 ‎      font-size: 0.85rem;
-‎      color: #9ca3af;
-‎      padding-left: 1.1rem;
-‎      margin-bottom: 1rem;
+‎      cursor: pointer;
+‎      display: inline-flex;
+‎      align-items: center;
+‎      gap: 0.4rem;
+‎      transition: border 0.15s ease, color 0.15s ease, background 0.15s ease;
 ‎    }
 ‎
-‎    .list li {
-‎      margin-bottom: 0.25rem;
+‎    .btn-ghost:hover {
+‎      border-color: rgba(56, 189, 248, 0.7);
+‎      color: #e5e7eb;
+‎      background: rgba(15, 23, 42, 0.95);
 ‎    }
 ‎
-‎    .right-card {
+‎    .hero-metrics {
+‎      display: flex;
+‎      flex-wrap: wrap;
+‎      gap: 1.4rem;
+‎      font-size: 0.8rem;
+‎      color: var(--muted);
+‎    }
+‎
+‎    .metric span {
+‎      display: block;
+‎      font-size: 1.1rem;
+‎      font-weight: 600;
+‎      color: #e5e7eb;
+‎    }
+‎
+‎    /* Hero Right */
+‎    .hero-right {
 ‎      position: relative;
-‎      border-radius: 1.2rem;
-‎      padding: 1.3rem 1.3rem 1.4rem;
+‎      display: flex;
+‎      justify-content: center;
+‎    }
+‎
+‎    .hero-card {
+‎      position: relative;
+‎      width: 100%;
+‎      max-width: 360px;
+‎      border-radius: 1.5rem;
+‎      padding: 1.4rem 1.4rem 1.6rem;
 ‎      background: radial-gradient(circle at top, #020617 0, #020617 45%, #020617 100%);
 ‎      border: 1px solid rgba(148, 163, 184, 0.4);
 ‎      box-shadow:
@@ -174,7 +302,7 @@
 ‎      overflow: hidden;
 ‎    }
 ‎
-‎    .right-card::before {
+‎    .hero-card::before {
 ‎      content: "";
 ‎      position: absolute;
 ‎      inset: -40%;
@@ -183,6 +311,32 @@
 ‎        radial-gradient(circle at 100% 0, rgba(168, 85, 247, 0.18), transparent 55%);
 ‎      opacity: 0.8;
 ‎      z-index: -1;
+‎      animation: float-bg 18s ease-in-out infinite alternate;
+‎    }
+‎
+‎    @keyframes float-bg {
+‎      from { transform: translate3d(-10px, 0, 0); }
+‎      to { transform: translate3d(10px, -10px, 0); }
+‎    }
+‎
+‎    .founder-tag {
+‎      font-size: 0.7rem;
+‎      text-transform: uppercase;
+‎      letter-spacing: 0.16em;
+‎      color: #a5b4fc;
+‎      margin-bottom: 0.4rem;
+‎    }
+‎
+‎    .founder-name {
+‎      font-size: 1.1rem;
+‎      font-weight: 600;
+‎      margin-bottom: 0.2rem;
+‎    }
+‎
+‎    .founder-role {
+‎      font-size: 0.8rem;
+‎      color: var(--muted);
+‎      margin-bottom: 0.9rem;
 ‎    }
 ‎
 ‎    .avatar-ring {
@@ -213,36 +367,12 @@
 ‎      to { transform: rotate(360deg); }
 ‎    }
 ‎
-‎    .name {
-‎      text-align: center;
-‎      font-size: 1.1rem;
-‎      font-weight: 600;
-‎      margin-bottom: 0.1rem;
-‎    }
-‎
-‎    .role {
-‎      text-align: center;
-‎      font-size: 0.8rem;
-‎      color: #9ca3af;
-‎      margin-bottom: 0.8rem;
-‎    }
-‎
-‎    .info-row {
-‎      font-size: 0.8rem;
-‎      color: #9ca3af;
-‎      margin-bottom: 0.6rem;
-‎    }
-‎
-‎    .info-row strong {
-‎      color: #e5e7eb;
-‎    }
-‎
-‎    .chip-row {
+‎    .hero-chip-row {
 ‎      display: flex;
 ‎      flex-wrap: wrap;
 ‎      gap: 0.4rem;
-‎      margin: 0.8rem 0 1rem;
 ‎      justify-content: center;
+‎      margin-bottom: 1rem;
 ‎    }
 ‎
 ‎    .chip {
@@ -251,174 +381,422 @@
 ‎      border-radius: 999px;
 ‎      border: 1px solid rgba(148, 163, 184, 0.5);
 ‎      background: rgba(15, 23, 42, 0.9);
-‎      color: #9ca3af;
+‎      color: var(--muted);
 ‎    }
 ‎
-‎    .cta {
+‎    .orbit {
+‎      position: absolute;
+‎      inset: 0;
+‎      pointer-events: none;
+‎    }
+‎
+‎    .orbit-dot {
+‎      position: absolute;
+‎      width: 9px;
+‎      height: 9px;
+‎      border-radius: 999px;
+‎      background: #38bdf8;
+‎      box-shadow: 0 0 16px rgba(56, 189, 248, 0.9);
+‎      animation: orbit 16s linear infinite;
+‎    }
+‎
+‎    .orbit-dot:nth-child(2) {
+‎      background: #a855f7;
+‎      box-shadow: 0 0 16px rgba(168, 85, 247, 0.9);
+‎      animation-duration: 22s;
+‎      animation-direction: reverse;
+‎    }
+‎
+‎    @keyframes orbit {
+‎      from { transform: rotate(0deg) translateX(140px) rotate(0deg); }
+‎      to { transform: rotate(360deg) translateX(140px) rotate(-360deg); }
+‎    }
+‎
+‎    .hero-card-footer {
 ‎      margin-top: 0.8rem;
 ‎      padding-top: 0.8rem;
 ‎      border-top: 1px dashed rgba(148, 163, 184, 0.4);
-‎      font-size: 0.8rem;
-‎      color: #9ca3af;
-‎      text-align: center;
+‎      display: flex;
+‎      justify-content: space-between;
+‎      font-size: 0.7rem;
+‎      color: var(--muted);
 ‎    }
 ‎
-‎    .cta a {
-‎      color: #38bdf8;
+‎    .hero-card-footer span strong {
+‎      display: block;
+‎      font-size: 0.85rem;
+‎      color: #e5e7eb;
+‎    }
+‎
+‎    /* Sections */
+‎    section {
+‎      margin-bottom: 3rem;
+‎    }
+‎
+‎    .section-label {
+‎      font-size: 0.75rem;
+‎      text-transform: uppercase;
+‎      letter-spacing: 0.18em;
+‎      color: var(--muted);
+‎      margin-bottom: 0.4rem;
+‎    }
+‎
+‎    .section-title {
+‎      font-size: 1.5rem;
+‎      margin-bottom: 0.4rem;
+‎    }
+‎
+‎    .section-subtitle {
+‎      font-size: 0.9rem;
+‎      color: var(--muted);
+‎      max-width: 32rem;
+‎      margin-bottom: 1.4rem;
+‎    }
+‎
+‎    .grid {
+‎      display: grid;
+‎      gap: 1.4rem;
+‎    }
+‎
+‎    .grid-3 {
+‎      grid-template-columns: repeat(3, minmax(0, 1fr));
+‎    }
+‎
+‎    .grid-2 {
+‎      grid-template-columns: repeat(2, minmax(0, 1fr));
+‎    }
+‎
+‎    .card {
+‎      position: relative;
+‎      border-radius: 1rem;
+‎      padding: 1.1rem 1.1rem 1.2rem;
+‎      background: radial-gradient(circle at top, #020617 0, #020617 45%, #020617 100%);
+‎      border: 1px solid var(--border);
+‎      overflow: hidden;
+‎      transition: transform 0.15s ease, box-shadow 0.15s ease,
+‎        border-color 0.15s ease, background 0.15s ease;
+‎    }
+‎
+‎    .card::before {
+‎      content: "";
+‎      position: absolute;
+‎      inset: -40%;
+‎      background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.12), transparent 55%);
+‎      opacity: 0;
+‎      transition: opacity 0.2s ease;
+‎      z-index: -1;
+‎    }
+‎
+‎    .card:hover {
+‎      transform: translateY(-3px);
+‎      box-shadow: 0 0 32px rgba(15, 23, 42, 0.9);
+‎      border-color: rgba(56, 189, 248, 0.7);
+‎    }
+‎
+‎    .card:hover::before {
+‎      opacity: 1;
+‎    }
+‎
+‎    .card-icon {
+‎      width: 32px;
+‎      height: 32px;
+‎      border-radius: 999px;
+‎      display: flex;
+‎      align-items: center;
+‎      justify-content: center;
+‎      font-size: 1.1rem;
+‎      margin-bottom: 0.6rem;
+‎      background: radial-gradient(circle at 30% 0, #38bdf8, #0f172a);
+‎      box-shadow: 0 0 18px rgba(56, 189, 248, 0.7);
+‎    }
+‎
+‎    .card-title {
+‎      font-size: 0.95rem;
+‎      margin-bottom: 0.3rem;
+‎    }
+‎
+‎    .card-text {
+‎      font-size: 0.8rem;
+‎      color: var(--muted);
+‎      margin-bottom: 0.6rem;
+‎    }
+‎
+‎    .card-tag-row {
+‎      display: flex;
+‎      flex-wrap: wrap;
+‎      gap: 0.3rem;
+‎      font-size: 0.7rem;
+‎    }
+‎
+‎    .tag {
+‎      padding: 0.15rem 0.5rem;
+‎      border-radius: 999px;
+‎      border: 1px solid rgba(148, 163, 184, 0.5);
+‎      color: var(--muted);
+‎    }
+‎
+‎    /* Knowledge Hub */
+‎    .kb-layout {
+‎      display: grid;
+‎      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+‎      gap: 1.6rem;
+‎      align-items: flex-start;
+‎    }
+‎
+‎    .kb-list {
+‎      display: flex;
+‎      flex-direction: column;
+‎      gap: 0.9rem;
+‎    }
+‎
+‎    .kb-item {
+‎      padding: 0.8rem 0.9rem;
+‎      border-radius: 0.9rem;
+‎      border: 1px solid rgba(148, 163, 184, 0.4);
+‎      background: rgba(15, 23, 42, 0.9);
+‎      cursor: default;
+‎      transition: border 0.15s ease, background 0.15s ease, transform 0.15s ease;
+‎    }
+‎
+‎    .kb-item:hover {
+‎      border-color: rgba(56, 189, 248, 0.7);
+‎      background: rgba(15, 23, 42, 0.98);
+‎      transform: translateY(-1px);
+‎    }
+‎
+‎    .kb-title {
+‎      font-size: 0.9rem;
+‎      margin-bottom: 0.2rem;
+‎    }
+‎
+‎    .kb-meta {
+‎      font-size: 0.7rem;
+‎      color: var(--muted);
+‎      display: flex;
+‎      justify-content: space-between;
+‎    }
+‎
+‎    .kb-highlight {
+‎      padding: 1rem;
+‎      border-radius: 1rem;
+‎      border: 1px dashed rgba(56, 189, 248, 0.7);
+‎      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.12), #020617 60%);
+‎      font-size: 0.85rem;
+‎      color: #e0f2fe;
+‎    }
+‎
+‎    /* Contact */
+‎    .contact-grid {
+‎      display: grid;
+‎      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+‎      gap: 1.6rem;
+‎      align-items: flex-start;
+‎    }
+‎
+‎    .contact-form {
+‎      display: flex;
+‎      flex-direction: column;
+‎      gap: 0.7rem;
+‎    }
+‎
+‎    .field {
+‎      display: flex;
+‎      flex-direction: column;
+‎      gap: 0.25rem;
+‎      font-size: 0.8rem;
+‎    }
+‎
+‎    .field label {
+‎      color: var(--muted);
+‎    }
+‎
+‎    .field input,
+‎    .field textarea {
+‎      background: rgba(15, 23, 42, 0.9);
+‎      border-radius: 0.6rem;
+‎      border: 1px solid rgba(148, 163, 184, 0.6);
+‎      padding: 0.55rem 0.7rem;
+‎      color: var(--text);
+‎      font-size: 0.8rem;
+‎      outline: none;
+‎      transition: border 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+‎    }
+‎
+‎    .field input:focus,
+‎    .field textarea:focus {
+‎      border-color: rgba(56, 189, 248, 0.9);
+‎      box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.6);
+‎      background: rgba(15, 23, 42, 0.98);
+‎    }
+‎
+‎    .field textarea {
+‎      min-height: 110px;
+‎      resize: vertical;
+‎    }
+‎
+‎    .contact-info {
+‎      font-size: 0.8rem;
+‎      color: var(--muted);
+‎      display: flex;
+‎      flex-direction: column;
+‎      gap: 0.7rem;
+‎    }
+‎
+‎    .contact-pill {
+‎      display: inline-flex;
+‎      align-items: center;
+‎      gap: 0.4rem;
+‎      padding: 0.25rem 0.7rem;
+‎      border-radius: 999px;
+‎      border: 1px solid rgba(56, 189, 248, 0.6);
+‎      background: rgba(15, 23, 42, 0.9);
+‎      font-size: 0.75rem;
+‎      color: #e0f2fe;
 ‎    }
 ‎
 ‎    footer {
 ‎      border-top: 1px solid rgba(30, 64, 175, 0.7);
 ‎      background: radial-gradient(circle at top, #020617 0, #000 70%);
-‎      padding: 1.1rem 1.25rem 1.4rem;
+‎      padding: 1.2rem 1.25rem 1.6rem;
 ‎      font-size: 0.75rem;
-‎      color: #9ca3af;
-‎      margin-top: 2rem;
+‎      color: var(--muted);
 ‎    }
 ‎
 ‎    .footer-inner {
-‎      max-width: 960px;
+‎      max-width: 1120px;
 ‎      margin: 0 auto;
 ‎      display: flex;
+‎      flex-wrap: wrap;
 ‎      justify-content: space-between;
 ‎      gap: 0.8rem;
-‎      flex-wrap: wrap;
+‎      align-items: center;
 ‎    }
 ‎
-‎    @media (max-width: 800px) {
-‎      .layout {
+‎    .footer-links {
+‎      display: flex;
+‎      flex-wrap: wrap;
+‎      gap: 0.8rem;
+‎    }
+‎
+‎    .footer-links a {
+‎      color: var(--muted);
+‎      transition: color 0.15s ease;
+‎    }
+‎
+‎    .footer-links a:hover {
+‎      color: #e5e7eb;
+‎    }
+‎
+‎    /* Responsive */
+‎    @media (max-width: 900px) {
+‎      .hero {
+‎        grid-template-columns: minmax(0, 1fr);
+‎      }
+‎      .hero-right {
+‎        order: -1;
+‎      }
+‎      .grid-3 {
+‎        grid-template-columns: repeat(2, minmax(0, 1fr));
+‎      }
+‎      .kb-layout,
+‎      .contact-grid {
 ‎        grid-template-columns: minmax(0, 1fr);
 ‎      }
 ‎    }
 ‎
 ‎    @media (max-width: 640px) {
+‎      .nav {
+‎        padding-inline: 1rem;
+‎      }
 ‎      .nav-links {
 ‎        display: none;
+‎      }
+‎      .hero {
+‎        padding-top: 1.6rem;
+‎      }
+‎      .grid-3,
+‎      .grid-2 {
+‎        grid-template-columns: minmax(0, 1fr);
 ‎      }
 ‎    }
 ‎  </style>
 ‎</head>
 ‎<body>
+‎  <!-- Header -->
 ‎  <header>
 ‎    <div class="nav">
 ‎      <div class="logo">
 ‎        <img src="logo.png" alt="GMDigiCorp Logo">
 ‎      </div>
 ‎      <nav class="nav-links">
-‎        <a href="index.html">Home</a>
-‎        <a href="index.html#services">Services</a>
-‎        <a href="index.html#knowledge">Knowledge Hub</a>
-‎        <a href="index.html#contact">Contact</a>
+‎        <a href="#home">Home</a>
+‎        <a href="#services">Services</a>
+‎        <a href="#knowledge">Knowledge Hub</a>
+‎        <a href="#contact">Contact</a>
+‎        <a href="founder.html">Founder</a>
 ‎      </nav>
+‎      <a href="#contact" class="nav-cta">Let’s Talk</a>
 ‎    </div>
 ‎  </header>
 ‎
 ‎  <main>
-‎    <div class="pill">
-‎      <span class="pill-dot"></span>
-‎      <span>Founder & Visionary • IT Support Engineer • Dubai, UAE</span>
-‎    </div>
-‎
-‎    <div class="layout">
-‎      <section>
-‎        <h1 class="title">
-‎          Meet <span>Md Golam Mostofa</span>
+‎    <!-- Hero -->
+‎    <section id="home" class="hero">
+‎      <div class="hero-left">
+‎        <div class="pill">
+‎          <span class="pill-dot"></span>
+‎          <span>AI‑driven IT Support • Dubai • Global Incident Management</span>
+‎        </div>
+‎        <h1 class="hero-title">
+‎          Building the <span>Future of IT Support</span> with AI & Automation
 ‎        </h1>
-‎        <p class="subtitle">
-‎          Dedicated and customer‑focused IT Support Engineer with 5+ years of experience
-‎          across enterprise, telecom, and retail environments—now building GMDigiCorp as
-‎          an AI‑aligned IT support brand.
+‎        <p class="hero-subtitle">
+‎          GMDigiCorp blends hands‑on enterprise IT experience with modern AI tools to deliver
+‎          proactive, self‑healing support for your users, devices, and cloud workloads.
 ‎        </p>
 ‎
-‎        <div class="bio-block">
-‎          Md Golam Mostofa has worked across multiple high‑pressure environments, including
-‎          enterprise IT projects in Dubai, large‑scale telecom support at Reliance Jio, and
-‎          retail store operations with Landmark Group. His core strength is turning messy,
-‎          ad‑hoc troubleshooting into clear, repeatable, and documented support processes
-‎          that are ready for automation and AI.
+‎        <div class="hero-badges">
+‎          <span class="badge">AI‑assisted Troubleshooting</span>
+‎          <span class="badge">Microsoft 365 & Intune</span>
+‎          <span class="badge">Secure Remote Support</span>
+‎          <span class="badge">Knowledge‑first Service Desk</span>
 ‎        </div>
 ‎
-‎        <div class="highlight">
-‎          “In every ticket, I see two things: a user who needs help now, and a pattern that
-‎          can be documented and automated later. GMDigiCorp is my way of combining both—
-‎          human‑first support today, AI‑ready knowledge for tomorrow.”
+‎        <div class="hero-actions">
+‎          <button class="btn-primary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+‎            Explore Services
+‎          </button>
+‎          <a href="founder.html" class="btn-ghost">
+‎            Meet the Founder →
+‎          </a>
 ‎        </div>
 ‎
-‎        <h2 class="section-title">Experience Snapshot</h2>
-‎        <ul class="list">
-‎          <li><strong>Apex (Tata Consultancy Services- E& Project), Dubai,UAE</strong> – L1/L2 IT support, incident & service request handling, Microsoft 365, Active Directory, VPN, and security patching.</li>
-‎          <li><strong>HCL Technologies (Project of Ford Global Technology and Business Center)</strong> – Global IT support with SCCM, Intune, MDM, ServiceNow, MFA, VPN, and user lifecycle management.</li>
-‎          <li><strong>Reliance Jio, Reliance Corporate IT Park (HQ)</strong> – Frontline technical support for laptops, desktops, printers, BitLocker, LAN/Wi‑Fi, and Office 365.</li>
-‎          <li><strong>Landmark Group (MAX)</strong> – Cluster IT executive for POS, printers, scanners, and network infrastructure across retail brands.</li>
-‎          <li><strong>Jio Infocomm Limited</strong> – OS, network, and software troubleshooting with strong reporting and analytical support for management.</li>
-‎        </ul>
-‎
-‎        <h2 class="section-title">Technical Focus</h2>
-‎        <ul class="list">
-‎          <li>IT Support, Desktop & End‑User Support, Remote Support</li>
-‎          <li>Active Directory, Entra ID, MFA, VPN, LAN/WAN</li>
-‎          <li>Microsoft 365, Outlook, Intune, SCCM, Ticketing Systems (ServiceNow)</li>
-‎          <li>Retail IT, POS systems, printers, and store infrastructure</li>
-‎          <li>Knowledge‑base creation, SOPs, and AI‑ready documentation</li>
-‎        </ul>
-‎
-‎        <h2 class="section-title">Education & Certifications</h2>
-‎        <ul class="list">
-‎          <li>Bachelor of Technology – Maulana Abul Kalam Azad University of Technology, India</li>
-‎          <li>Diploma in Engineering, West Bengal State Council of Technical Education </li>
-‎          <li>IT Service Desk: Service Management (LinkedIn)</li>
-‎          <li>Microsoft Intune – Mobile Device Management (Udemy)</li>
-‎          <li>Diploma in Computer Hardware & Maintenance – NCL&D</li>
-‎          <li>CCNA 200‑301 Network Fundamentals – Simplilearn</li>
-‎        </ul>
-‎      </section>
-‎
-‎      <aside class="right-card">
-‎        <div class="avatar-ring">
-‎          <img src="founder.png" alt="Md Golam Mostofa">
+‎        <div class="hero-metrics">
+‎          <div class="metric">
+‎            <span>5+ yrs</span>
+‎            Enterprise & Retail IT Support
+‎          </div>
+‎          <div class="metric">
+‎            <span>Multi‑Cloud</span>
+‎            M365 • AD • VPN • Intune
+‎          </div>
+‎          <div class="metric">
+‎            <span>AI‑Ready</span>
+‎            SOPs & Knowledge Base
+‎          </div>
 ‎        </div>
-‎        <div class="name">Md Golam Mostofa</div>
-‎        <div class="role">Founder & Visionary • IT Operation Engineer</div>
+‎      </div>
 ‎
-‎        <div class="info-row">
-‎          <strong>Location:</strong> Dubai, United Arab Emirates (UAE)
-‎        </div>
-‎        <div class="info-row">
-‎          <strong>Experience:</strong> 5+ years in IT Support, Telecom & Retail IT
-‎        </div>
-‎        <div class="info-row">
-‎          <strong>Languages:</strong> Hindi, English, Bengali
-‎        </div>
-‎        <div class="info-row">
-‎          <strong>Contact:</strong> +971 52 223 0991 • golammostofa239@gmail.com
-‎        </div>
+‎      <div class="hero-right">
+‎        <div class="hero-card">
+‎          <div class="founder-tag">Founder & Visionary</div>
+‎          <div class="founder-name">Md Golam Mostofa</div>
+‎          <div class="founder-role">IT Operation Engineer • AI‑aligned Service Design</div>
 ‎
-‎        <div class="chip-row">
-‎          <span class="chip">IT Operation Engineer</span>
-‎          <span class="chip">Active Directory</span>
-‎          <span class="chip">Office 365</span>
-‎          <span class="chip">Remote Support</span>
-‎          <span class="chip">LAN/WAN</span>
-‎        </div>
+‎          <div class="avatar-ring">
+‎            <img src="founder.png" alt="Founder Photo">
+‎          </div>
 ‎
-‎        <div class="cta">
-‎          Looking to collaborate or hire GMDigiCorp?<br />
-‎          Start from the <a href="index.html#contact">contact section</a> on the main page.
-‎        </div>
-‎      </aside>
-‎    </div>
-‎  </main>
-‎
-‎  <footer>
-‎    <div class="footer-inner">
-‎      <span>© <span id="year"></span> GMDigiCorp. All rights reserved.</span>
-‎      <span>Designed by Md Golam Mostofa as an AI‑aligned IT support brand.</span>
-‎    </div>
-‎  </footer>
-‎
-‎  <script>
-‎    document.getElementById("year").textContent = new Date().getFullYear();
-‎  </script>
-‎</body>
-‎</html>
-‎
+‎          <div class="hero-chip-row">
+‎            <span class="chip">IT Operation Engineer</span>
+‎            <span class
