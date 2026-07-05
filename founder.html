@@ -1,303 +1,585 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Meet the Founder | GMDigiCorp</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <title>Meet the Founder | GMDigiCorp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --bg: #050814;
+      --accent: #00e5ff;
+      --accent-soft: rgba(0, 229, 255, 0.2);
+      --text: #e5f4ff;
+      --muted: #8fa3c7;
+      --border: #1b2340;
+      --card: #0b1024;
+      --font-main: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
 
-<style>
-:root {
-  --bg: #050814;
-  --accent: #00e5ff;
-  --accent2: #7b5cff;
-  --text: #e5f4ff;
-  --muted: #8fa3c7;
-  --border: #1b2340;
-  --card: #0b1024;
-  --font-main: "Segoe UI", system-ui, sans-serif;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  background: radial-gradient(circle at top, #0b1633 0, #02030a 40%, #000000 100%);
-  color: var(--text);
-  font-family: var(--font-main);
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
+    body {
+      font-family: var(--font-main);
+      background: radial-gradient(circle at top, #0b1633 0, #02030a 40%, #000000 100%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-/* Background Animations */
-.bg-grid {
-  position: fixed;
-  inset: 0;
-  background-image: linear-gradient(rgba(0, 229, 255, 0.08) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(0, 229, 255, 0.08) 1px, transparent 1px);
-  background-size: 40px 40px;
-  opacity: 0.35;
-  animation: gridMove 18s linear infinite;
-  z-index: -2;
-}
-@keyframes gridMove {
-  0% { transform: translate3d(0,0,0); }
-  100% { transform: translate3d(-80px,-80px,0); }
-}
-.bg-glow {
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at 20% 0%, rgba(0,229,255,0.25), transparent 55%),
-              radial-gradient(circle at 80% 100%, rgba(0,229,255,0.18), transparent 55%);
-  mix-blend-mode: screen;
-  z-index: -1;
-}
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      background-image: linear-gradient(
+          rgba(0, 229, 255, 0.08) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(0, 229, 255, 0.08) 1px,
+          transparent 1px
+        );
+      background-size: 40px 40px;
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: -2;
+      animation: gridMove 18s linear infinite;
+    }
 
-/* Navbar */
-header {
-  position: sticky;
-  top: 0;
-  background: rgba(5, 8, 20, 0.85);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(0, 229, 255, 0.18);
-  z-index: 10;
-  animation: fadeIn 1s ease forwards;
-}
-.nav {
-  max-width: 1100px;
-  margin: auto;
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.logo {
-  height: 42px;
-  filter: drop-shadow(0 0 12px rgba(0, 229, 255, 0.6));
-}
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-.nav-left h1 {
-  font-size: 1.1rem;
-  color: var(--accent);
-  letter-spacing: 0.12em;
-}
-.nav-left span {
-  font-size: 0.75rem;
-  color: var(--muted);
-}
-.nav-links {
-  display: flex;
-  gap: 1rem;
-}
-.nav-links a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 0.85rem;
-  position: relative;
-}
-.nav-links a:hover {
-  color: var(--text);
-}
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
-  transition: width 0.25s ease;
-}
-.nav-links a:hover::after {
-  width: 100%;
-}
+    @keyframes gridMove {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(-80px, -80px, 0);
+      }
+    }
 
-/* Founder Section */
-.founder-section {
-  max-width: 1100px;
-  margin: auto;
-  padding: 3rem 1.5rem;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 2rem;
-}
-@media (max-width: 900px) {
-  .founder-section {
-    grid-template-columns: 1fr;
-  }
-}
+    .bg-glow {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 20% 0%, rgba(0, 229, 255, 0.25), transparent 55%),
+                  radial-gradient(circle at 80% 100%, rgba(0, 229, 255, 0.18), transparent 55%);
+      mix-blend-mode: screen;
+      pointer-events: none;
+      z-index: -1;
+    }
 
-.founder-title {
-  font-size: 1.2rem;
-  color: var(--muted);
-  letter-spacing: 0.16em;
-  animation: fadeUp 1s ease forwards;
-}
-.founder-name {
-  font-size: 1.8rem;
-  margin: 0.4rem 0;
-  animation: fadeUp 1.2s ease forwards;
-}
-.founder-role {
-  font-size: 0.9rem;
-  color: var(--muted);
-  margin-bottom: 1rem;
-  animation: fadeUp 1.4s ease forwards;
-}
-.founder-bio {
-  font-size: 0.9rem;
-  color: var(--muted);
-  line-height: 1.6;
-  animation: fadeUp 1.6s ease forwards;
-}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: linear-gradient(to bottom, rgba(5, 8, 20, 0.95), rgba(5, 8, 20, 0.75));
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0, 229, 255, 0.18);
+    }
 
-.founder-highlight {
-  background: var(--card);
-  border: 1px solid rgba(0, 229, 255, 0.25);
-  padding: 1rem;
-  border-radius: 1rem;
-  margin-top: 1rem;
-  animation-top: 1rem;
-  animation: fadeUp 1.8s ease forwards;
-}
-.founder-highlight ul {
-  padding-left: 1rem;
-}
-.founder-highlight li {
-  margin-bottom: 0.4rem;
-  color: var(--muted);
-}
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.founder-photo {
-  animation: scaleIn 1.4s ease forwards;
-}
-.founder-photo img {
-  width: 100%;
-  border-radius: 1rem;
-  border: 1px solid rgba(0, 229, 255, 0.35);
-  filter: drop-shadow(0 0 18px rgba(0, 229, 255, 0.7));
-}
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
 
-/* Buttons */
-.btn-primary {
-  background: radial-gradient(circle at 0 0, var(--accent), var(--accent2));
-  border: none;
-  padding: 0.6rem 1.3rem;
-  border-radius: 999px;
-  color: var(--text);
-  cursor: pointer;
-  box-shadow: 0 0 18px rgba(0, 229, 255, 0.55);
-  transition: 0.25s;
-}
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 22px rgba(0, 229, 255, 0.75);
-}
-.btn-outline {
-  background: transparent;
-  border: 1px solid rgba(0, 229, 255, 0.4);
-  padding: 0.6rem 1.3rem;
-  border-radius: 999px;
-  color: var(--accent);
-  cursor: pointer;
-  transition: 0.25s;
-}
-.btn-outline:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 22px rgba(0, 229, 255, 0.45);
-}
+    .logo {
+      height: 40px;
+      width: auto;
+      filter: drop-shadow(0 0 12px rgba(0, 229, 255, 0.6));
+    }
 
-/* Footer */
-footer {
-  background: rgba(5, 8, 20, 0.95);
-  border-top: 1px solid rgba(0, 229, 255, 0.18);
-  padding: 1rem;
-  text-align: center;
-  font-size: 0.8rem;
-  color: var(--muted);
-}
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
 
-/* Animations */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.85); }
-  to { opacity: 1; transform: scale(1); }
-}
-</style>
+    .brand-text h1 {
+      font-size: 1.1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .brand-text span {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.85rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 2px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), #7b5cff);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .founder-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .founder-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .founder-header {
+      margin-bottom: 1rem;
+    }
+
+    .founder-title {
+      font-size: 1.2rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .founder-name {
+      font-size: 1.6rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .founder-role {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .founder-bio {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+
+    .founder-highlight {
+      background: radial-gradient(circle at top, #111a3b, #050814);
+      border-radius: 1rem;
+      border: 1px solid rgba(0, 229, 255, 0.25);
+      padding: 1rem;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+    }
+
+    .highlight-title {
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .highlight-list {
+      font-size: 0.8rem;
+      color: var(--muted);
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .highlight-list li {
+      margin-bottom: 0.3rem;
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    .highlight-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .founder-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.2rem;
+    }
+
+    @media (max-width: 600px) {
+      .founder-meta-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .meta-card {
+      background: radial-gradient(circle at top, #111a3b, #050814);
+      border-radius: 0.9rem;
+      border: 1px solid rgba(0, 229, 255, 0.25);
+      padding: 0.8rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .meta-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .meta-value {
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    .founder-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      padding: 0.45rem 1.1rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      background: rgba(11, 16, 36, 0.9);
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+      border-color: rgba(0, 229, 255, 0.4);
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at 0 0, #00e5ff, #7b5cff);
+      border-color: transparent;
+      box-shadow: 0 0 18px rgba(0, 229, 255, 0.55);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 22px rgba(0, 229, 255, 0.65);
+      filter: brightness(1.05);
+    }
+
+    .founder-right {
+      position: relative;
+    }
+
+    .founder-card {
+      background: radial-gradient(circle at top, #111a3b, #050814);
+      border-radius: 1.2rem;
+      border: 1px solid rgba(0, 229, 255, 0.25);
+      padding: 1.2rem;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .founder-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: conic-gradient(
+        from 180deg,
+        rgba(0, 229, 255, 0.0),
+        rgba(0, 229, 255, 0.45),
+        rgba(123, 92, 255, 0.45),
+        rgba(0, 229, 255, 0.0)
+      );
+      opacity: 0.35;
+      animation: rotateRing 18s linear infinite;
+    }
+
+    @keyframes rotateRing {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .founder-card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .founder-photo {
+      border-radius: 1rem;
+      overflow: hidden;
+      margin-bottom: 0.8rem;
+      border: 1px solid rgba(0, 229, 255, 0.35);
+    }
+
+    .founder-photo img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      filter: drop-shadow(0 0 18px rgba(0, 229, 255, 0.7));
+    }
+
+    .founder-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .chip {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(5, 8, 20, 0.9);
+      border: 1px solid rgba(0, 229, 255, 0.35);
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .chip-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .founder-card-text {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    footer {
+      border-top: 1px solid rgba(0, 229, 255, 0.18);
+      background: rgba(5, 8, 20, 0.95);
+      padding: 0.9rem 1.5rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.75rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+  </style>
 </head>
-
 <body>
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
 
-<div class="bg-grid"></div>
-<div class="bg-glow"></div>
+  <header>
+    <nav class="nav">
+      <div class="nav-left">
+        <img src="logo.png" alt="GMDigiCorp Logo" class="logo" />
+        <div class="brand-text">
+          <h1>GMDigiCorp</h1>
+          <span>Future-Ready IT Support & End-User Computing</span>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="index.html">Back to Home</a>
+      </div>
+    </nav>
+  </header>
 
-<!-- NAVBAR -->
-<header>
-  <nav class="nav">
-    <div class="nav-left">
-      <img src="logo.png" class="logo" />
+  <main>
+    <section class="founder-section">
       <div>
-        <h1>GMDigiCorp</h1>
-        <span>Future-Ready IT Support</span>
+        <div class="founder-header">
+          <div class="founder-title">Meet the Founder</div>
+          <div class="founder-name">Md Golam Mostofa</div>
+          <div class="founder-role">
+            IT Support Engineer · Desktop Support · End-User Computing
+          </div>
+        </div>
+
+        <p class="founder-bio">
+          Md Golam Mostofa is an IT Support Engineer with over 4 years of hands-on experience delivering L1/L2 desktop
+          and end-user support across enterprise and government environments in the UAE and India. He has worked with
+          organizations such as the Department of Municipalities and Transport (Abu Dhabi), the Ministry of Education
+          (UAE), HCLTech, Reliance Industries Limited (Jio) and Landmark Group (MAX), supporting mission-critical IT
+          operations and user productivity.
+        </p>
+
+        <div class="founder-highlight">
+          <div class="highlight-title">Professional Focus</div>
+          <ul class="highlight-list">
+            <li>
+              Specializes in Microsoft 365, Active Directory, Windows 10/11, Intune and SCCM for modern endpoint
+              management.
+            </li>
+            <li>
+              Strong background in ITSM ticketing, escalation and SLA-driven incident resolution using platforms like
+              ServiceNow, HPSM and ManageEngine.
+            </li>
+            <li>
+              Experienced in troubleshooting hardware, software, VPN and network connectivity issues across diverse
+              user environments.
+            </li>
+            <li>
+              Proven track record in supporting government departments and large enterprises with stable, reliable IT
+              operations.
+            </li>
+          </ul>
+        </div>
+
+        <div class="founder-meta-grid">
+          <div class="meta-card">
+            <div class="meta-label">Current Role</div>
+            <div class="meta-value">
+              IT Support Engineer — MDS UAE (Payroll: Innovations Group)<br />
+              Project: Government — Department of Municipalities and Transport (DMT), Abu Dhabi
+            </div>
+          </div>
+          <div class="meta-card">
+            <div class="meta-label">Previous Engagements</div>
+            <div class="meta-value">
+              IT Support Engineer — Tata Consultancy Services (Ministry of Education, UAE)<br />
+              IT Support Specialist — HCLTech, Chennai<br />
+              IT Support Engineer — Reliance Industries Limited (Jio), Mumbai<br />
+              Cluster IT Executive — Landmark Group (MAX), Kolkata
+            </div>
+          </div>
+          <div class="meta-card">
+            <div class="meta-label">Education</div>
+            <div class="meta-value">
+              B.Tech in Mechanical Engineering — Maulana Abul Kalam Azad University of Technology (2022)<br />
+              Diploma in Engineering (Mechanical) — West Bengal State Council of Technical Education (2017)
+            </div>
+          </div>
+          <div class="meta-card">
+            <div class="meta-label">Certifications</div>
+            <div class="meta-value">
+              CCNA 200-301 — Simplilearn<br />
+              Diploma in Computer Hardware & Maintenance — NCL&D
+            </div>
+          </div>
+        </div>
+
+        <div class="founder-actions">
+          <a href="index.html#contact" class="btn btn-primary">
+            Work with GMDigiCorp
+          </a>
+          <a href="https://linkedin.com/in/iammostofaaims" target="_blank" class="btn btn-outline">
+            Connect on LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div class="founder-right">
+        <div class="founder-card">
+          <div class="founder-card-inner">
+            <div class="founder-photo">
+              <img src="founder.png" alt="Md Golam Mostofa - Founder of GMDigiCorp" />
+            </div>
+            <div class="founder-chip-row">
+              <div class="chip">
+                <span class="chip-dot"></span>
+                4+ Years · UAE & India
+              </div>
+              <div class="chip">
+                <span class="chip-dot"></span>
+                Microsoft 365 · AD · Windows
+              </div>
+              <div class="chip">
+                <span class="chip-dot"></span>
+                Intune · SCCM · ITSM
+              </div>
+            </div>
+            <div class="founder-card-text">
+              Md’s approach to IT support is grounded in clarity, reliability and user-centric thinking. He combines
+              strong technical skills with structured processes—ensuring that incidents are resolved within SLA,
+              environments remain stable and users feel confident in the technology they rely on every day.
+              <br /><br />
+              GMDigiCorp is his way of bringing that experience together into a focused, future-ready IT support brand
+              that can partner with organizations across Abu Dhabi, Dubai and beyond.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© GMDigiCorp — Founded by Md Golam Mostofa</span>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#contact">Contact</a>
       </div>
     </div>
-
-    <div class="nav-links">
-      <a href="index.html#services">Services</a>
-      <a href="index.html#contact">Contact</a>
-      <a href="index.html">Back to Home</a>
-    </div>
-  </nav>
-</header>
-
-<!-- FOUNDER SECTION -->
-<section class="founder-section">
-  <div>
-    <div class="founder-title">Meet the Founder</div>
-    <div class="founder-name">Md Golam Mostofa</div>
-    <div class="founder-role">IT Support Engineer · Desktop Support · End-User Computing</div>
-
-    <p class="founder-bio">
-      Md Golam Mostofa is an IT Support Engineer with over 4 years of hands-on experience delivering L1/L2 desktop
-      and end-user support across enterprise and government environments in the UAE and India. He has worked with
-      organizations such as the Department of Municipalities and Transport (Abu Dhabi), the Ministry of Education
-      (UAE), HCLTech, Reliance Industries Limited (Jio) and Landmark Group (MAX), supporting mission-critical IT
-      operations and user productivity.
-    </p>
-
-    <div class="founder-highlight">
-      <h3>Professional Focus</h3>
-      <ul>
-        <li>Microsoft 365, Active Directory, Windows 10/11</li>
-        <li>Intune, SCCM, Patch Management</li>
-        <li>ITSM Ticketing (ServiceNow, HPSM, ManageEngine)</li>
-        <li>Network Troubleshooting (TCP/IP, DNS, DHCP, VPN)</li>
-      </ul>
-    </div>
-
-    <br />
-
-    <a href="index.html#contact" class="btn-primary">Work with GMDigiCorp</a>
-    <a href="https://linkedin.com/in/iammostofaaims" target="_blank" class="btn-outline">Connect on LinkedIn</a>
-  </div>
-
-  <div class="founder-photo">
-    <img src="founder.png" alt="Founder - Md Golam Mostofa" />
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  © GMDigiCorp — Founded by Md Golam Mostofa
-</footer>
-
+  </footer>
 </body>
 </html>
