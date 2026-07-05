@@ -88,10 +88,10 @@ body {
 
 /* Intro Section */
 .intro {
-  height: 100vh;
+  min-height: 100vh;
   max-width: 900px;
   margin: auto;
-  padding: 2rem;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -99,10 +99,10 @@ body {
   animation: fadeIn 1.2s ease forwards;
 }
 
-/* UNIVERSAL RESPONSIVE PORTRAIT PHOTO */
+/* UNIVERSAL AUTO-RESPONSIVE PORTRAIT PHOTO */
 .photo-box {
-  width: 320px;
-  max-width: 95%;
+  width: 100%;
+  max-width: 380px;
   margin: 0 auto 2rem;
   border-radius: 18px;
   overflow: hidden;
@@ -114,20 +114,20 @@ body {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: contain;
+  object-fit: contain; /* FULL photo always visible */
 }
 
 /* MOBILE OPTIMIZATION */
 @media (max-width: 480px) {
   .photo-box {
-    width: 260px;
+    max-width: 300px;
     border-radius: 12px;
   }
 }
 
 /* Name */
 .intro-title {
-  font-size: 4.8rem;
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
   font-weight: 900;
   background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent));
   -webkit-background-clip: text;
@@ -139,7 +139,7 @@ body {
 
 /* Signature */
 .signature {
-  font-size: 1.8rem;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
   font-family: "Brush Script MT", cursive;
   color: var(--accent);
   margin-bottom: 1.5rem;
@@ -148,7 +148,7 @@ body {
 
 /* Auto Typing Tagline */
 .tagline {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
   color: var(--accent);
   margin-bottom: 1.5rem;
   height: 40px;
@@ -157,7 +157,7 @@ body {
 
 /* Subtitle */
 .intro-sub {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: var(--muted);
   margin-bottom: 2rem;
   line-height: 1.6;
@@ -174,7 +174,7 @@ body {
 }
 .social a {
   color: var(--accent);
-  font-size: 1.8rem;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
   text-decoration: none;
   transition: 0.3s;
 }
@@ -189,7 +189,7 @@ body {
   padding: 1rem 2.4rem;
   border-radius: 999px;
   color: var(--text);
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
   border: none;
   cursor: pointer;
   box-shadow: 0 0 18px rgba(0, 229, 255, 0.55);
