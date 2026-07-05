@@ -19,6 +19,9 @@
   --font-main: "Segoe UI", system-ui, sans-serif;
 }
 
+/* Light Mode-ui, sans-serif;
+}
+
 /* Light Mode */
 .light {
   --bg: #f7f9fc;
@@ -97,7 +100,7 @@ body {
   animation: fadeIn 1.2s ease forwards;
 }
 
-/* Responsive Portrait Photo */
+/* 3D Tilt Portrait Photo */
 .photo-box {
   width: 100%;
   max-width: 380px;
@@ -107,6 +110,10 @@ body {
   border: 4px solid rgba(0,229,255,0.5);
   box-shadow: 0 0 35px rgba(0,229,255,0.6);
   animation: scaleIn 1.5s ease forwards;
+  transition: transform 0.3s ease;
+}
+.photo-box:hover {
+  transform: perspective(800px) rotateY(8deg) rotateX(4deg) scale(1.03);
 }
 .photo-box img {
   width: 100%;
@@ -173,49 +180,59 @@ body {
   letter-spacing: 0.1em;
 }
 
-/* Timeline */
-.timeline {
-  max-width: 850px;
+/* Experience Cards */
+.exp-cards {
+  max-width: 900px;
   margin: auto;
-  text-align: left;
-  animation: fadeUp 2.4s ease forwards;
+  display: grid;
+  gap: 1rem;
 }
-.timeline-item {
+.exp-card {
   background: var(--card);
-  border: 1px solid rgba(0,229,255,0.25);
   padding: 1rem;
-  border-radius: 0.8rem;
-  margin-bottom: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0,229,255,0.25);
   box-shadow: 0 0 20px rgba(0,229,255,0.1);
+  text-align: left;
+  transition: transform 0.3s ease;
 }
-.timeline-item h3 {
+.exp-card:hover {
+  transform: translateY(-5px);
+}
+.exp-card h3 {
   margin: 0;
-  font-size: 1.1rem;
   color: var(--accent);
 }
-.timeline-item p {
+.exp-card p {
   margin: 0.4rem 0 0;
   color: var(--muted);
-  font-size: 0.9rem;
 }
 
-/* Skills */
-.skills {
+/* Skill Bars */
+.skill-bar {
   max-width: 850px;
   margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  justify-content: center;
-  animation: fadeUp 2.6s ease forwards;
+  margin-bottom: 1rem;
 }
-.skill {
-  padding: 0.4rem 0.9rem;
+.skill-label {
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+.bar {
+  width: 100%;
+  height: 10px;
+  background: rgba(255,255,255,0.1);
   border-radius: 999px;
-  background: rgba(0,229,255,0.1);
-  border: 1px solid rgba(0,229,255,0.3);
-  color: var(--accent);
-  font-size: 0.85rem;
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  width: 0%;
+  animation: fillBar 2s forwards;
+}
+@keyframes fillBar {
+  to { width: var(--level); }
 }
 
 /* Job Roles */
@@ -265,6 +282,24 @@ body {
 .btn-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 0 25px rgba(0, 229, 255, 0.75);
+}
+
+/* Back to Top */
+.back-top {
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  background: var(--accent);
+  color: var(--text);
+  padding: 0.7rem 1rem;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0,229,255,0.5);
+  transition: 0.3s;
+}
+.back-top:hover {
+  transform: scale(1.1);
 }
 
 /* WhatsApp Floating Button */
@@ -332,49 +367,63 @@ body {
     Microsoft ecosystem support with precision, stability, and SLA-driven excellence.
   </p>
 
-  <h2 class="section-title">Experience Timeline</h2>
+  <h2 class="section-title">Experience Overview</h2>
 
-  <div class="timeline">
-    <div class="timeline-item">
+  <div class="exp-cards">
+    <div class="exp-card">
       <h3>MDS UAE — Abu Dhabi (DMT Project)</h3>
       <p>IT Operation Engineer · 2026 – Present</p>
     </div>
 
-    <div class="timeline-item">
+    <div class="exp-card">
       <h3>Tata Consultancy Services — Dubai (MOE Project)</h3>
       <p>IT Support Engineer · 2025 – 2026</p>
     </div>
 
-    <div class="timeline-item">
+    <div class="exp-card">
       <h3>HCLTech — Chennai</h3>
       <p>IT Support Specialist · 2025</p>
     </div>
 
-    <div class="timeline-item">
+    <div class="exp-card">
       <h3>Reliance Industries Limited (Jio) — Mumbai</h3>
       <p>IT Support Engineer · 2023 – 2025</p>
     </div>
 
-    <div class="timeline-item">
+    <div class="exp-card">
       <h3>Landmark Group (MAX) — Kolkata</h3>
       <p>Cluster IT Executive · 2022</p>
     </div>
   </div>
 
-  <h2 class="section-title">Technical Skills</h2>
+  <h2 class="section-title">Skill Levels</h2>
 
-  <div class="skills">
-    <span class="skill">Microsoft 365</span>
-    <span class="skill">Active Directory</span>
-    <span class="skill">Windows 10/11</span>
-    <span class="skill">Intune</span>
-    <span class="skill">SCCM</span>
-    <span class="skill">ITSM (ServiceNow / HPSM)</span>
-    <span class="skill">Networking (TCP/IP, DNS, DHCP, VPN)</span>
-    <span class="skill">End-User Computing</span>
+  <div class="skill-bar">
+    <div class="skill-label">Microsoft 365</div>
+    <div class="bar"><div class="bar-fill" style="--level: 95%;"></div></div>
   </div>
 
-  <h2 class="section-title">Company Job Roles & Responsibilities</h2>
+  <div class="skill-bar">
+    <div class="skill-label">Active Directory</div>
+    <div class="bar"><div class="bar-fill" style="--level: 90%;"></div></div>
+  </div>
+
+  <div class="skill-bar">
+    <div class="skill-label">Intune</div>
+    <div class="bar"><div class="bar-fill" style="--level: 85%;"></div></div>
+  </div>
+
+  <div class="skill-bar">
+    <div class="skill-label">SCCM</div>
+    <div class="bar"><div class="bar-fill" style="--level: 80%;"></div></div>
+  </div>
+
+  <div class="skill-bar">
+    <div class="skill-label">Networking</div>
+    <div class="bar"><div class="bar-fill" style="--level: 75%;"></div></div>
+  </div>
+
+  <h2 class="section-title">Job Roles & Responsibilities</h2>
 
   <ul class="roles">
     <li>✔ Managing daily IT operations across enterprise & government environments.</li>
@@ -403,6 +452,8 @@ body {
   </button>
 
 </section>
+
+<div class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆</div>
 
 <a class="whatsapp" href="https://wa.me/971522230991" target="_blank">💬</a>
 
