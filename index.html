@@ -5,6 +5,9 @@
 <title>GMDigiCorp | MD GOLAM MOSTOFA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<!-- Particle.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
 <style>
 :root {
   --bg: #050814;
@@ -35,6 +38,13 @@ body {
   transition: background 0.4s, color 0.4s;
 }
 
+/* Particle Background */
+#particles-js {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+}
+
 /* Background Grid */
 .bg-grid {
   position: fixed;
@@ -42,7 +52,7 @@ body {
   background-image: linear-gradient(rgba(0, 229, 255, 0.08) 1px, transparent 1px),
                     linear-gradient(90deg, rgba(0, 229, 255, 0.08) 1px, transparent 1px);
   background-size: 40px 40px;
-  opacity: 0.35;
+  opacity: 0.25;
   animation: gridMove 18s linear infinite;
   z-index: -2;
 }
@@ -127,11 +137,12 @@ body {
   animation: fadeUp 1.8s ease forwards;
 }
 
-/* Tagline */
+/* Auto Typing Tagline */
 .tagline {
   font-size: 1.5rem;
   color: var(--accent);
   margin-bottom: 1.5rem;
+  height: 40px;
   animation: fadeUp 2s ease forwards;
 }
 
@@ -199,6 +210,16 @@ body {
   transform: scale(1.1);
 }
 
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  animation: fadeUp 3s ease forwards;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
@@ -222,6 +243,7 @@ body {
 
 <body>
 
+<div id="particles-js"></div>
 <div class="bg-grid"></div>
 <div class="bg-glow"></div>
 
@@ -237,7 +259,7 @@ body {
 
   <div class="signature">— Mostofa</div>
 
-  <div class="tagline">IT Operation Engineer</div>
+  <div class="tagline" id="typing"></div>
 
   <p class="intro-sub">
     Founder of <strong>GMDigiCorp</strong><br>
@@ -257,6 +279,10 @@ body {
 
 </section>
 
+<footer>
+  © 2026 GMDigiCorp — Designed by MD GOLAM MOSTOFA
+</footer>
+
 <!-- WhatsApp Floating Button -->
 <a class="whatsapp" href="https://wa.me/971522230991" target="_blank">💬</a>
 
@@ -264,6 +290,32 @@ body {
 function toggleMode() {
   document.body.classList.toggle("light");
 }
+
+/* Auto Typing Tagline */
+const text = "IT Operation Engineer";
+let i = 0;
+function typingEffect() {
+  if (i < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typingEffect, 120);
+  }
+}
+typingEffect();
+
+/* Particle.js Config */
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 60 },
+    size: { value: 3 },
+    color: { value: "#00e5ff" },
+    line_linked: {
+      enable: true,
+      color: "#00e5ff"
+    },
+    move: { speed: 2 }
+  }
+});
 </script>
 
 </body>
