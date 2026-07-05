@@ -1,585 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Meet the Founder | GMDigiCorp</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    :root {
-      --bg: #050814;
-      --accent: #00e5ff;
-      --accent-soft: rgba(0, 229, 255, 0.2);
-      --text: #e5f4ff;
-      --muted: #8fa3c7;
-      --border: #1b2340;
-      --card: #0b1024;
-      --font-main: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    }
+<meta charset="UTF-8" />
+<title>Founder | MD GOLAM MOSTOFA | GMDigiCorp</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+:root {
+  --bg: #050814;
+  --accent: #00e5ff;
+  --accent2: #7b5cff;
+  --text: #e5f4ff;
+  --muted: #8fa3c7;
+  --card: #0b1024;
+  --font-main: "Segoe UI", system-ui, sans-serif;
+}
 
-    body {
-      font-family: var(--font-main);
-      background: radial-gradient(circle at top, #0b1633 0, #02030a 40%, #000000 100%);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+/* Light Mode Variables */
+.light {
+  --bg: #f7f9fc;
+  --text: #0a0a0a;
+  --muted: #444;
+  --card: #ffffff;
+  --accent: #007bff;
+  --accent2: #6610f2;
+}
 
-    .bg-grid {
-      position: fixed;
-      inset: 0;
-      background-image: linear-gradient(
-          rgba(0, 229, 255, 0.08) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          rgba(0, 229, 255, 0.08) 1px,
-          transparent 1px
-        );
-      background-size: 40px 40px;
-      opacity: 0.35;
-      pointer-events: none;
-      z-index: -2;
-      animation: gridMove 18s linear infinite;
-    }
+/* Base */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  transition: background 0.4s, color 0.4s;
+}
 
-    @keyframes gridMove {
-      0% {
-        transform: translate3d(0, 0, 0);
-      }
-      100% {
-        transform: translate3d(-80px, -80px, 0);
-      }
-    }
+/* Background Grid */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgba(0, 229, 255, 0.08) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 229, 255, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.35;
+  animation: gridMove 18s linear infinite;
+  z-index: -2;
+}
+@keyframes gridMove {
+  0% { transform: translate3d(0,0,0); }
+  100% { transform: translate3d(-80px,-80px,0); }
+}
 
-    .bg-glow {
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(circle at 20% 0%, rgba(0, 229, 255, 0.25), transparent 55%),
-                  radial-gradient(circle at 80% 100%, rgba(0, 229, 255, 0.18), transparent 55%);
-      mix-blend-mode: screen;
-      pointer-events: none;
-      z-index: -1;
-    }
+/* Glow */
+.bg-glow {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 20% 0%, rgba(0,229,255,0.25), transparent 55%),
+              radial-gradient(circle at 80% 100%, rgba(0,229,255,0.18), transparent 55%);
+  mix-blend-mode: screen;
+  z-index: -1;
+}
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: linear-gradient(to bottom, rgba(5, 8, 20, 0.95), rgba(5, 8, 20, 0.75));
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(0, 229, 255, 0.18);
-    }
+/* Container */
+.founder {
+  max-width: 1100px;
+  margin: 1100px;
+  margin: auto;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  animation: fadeIn 1.2s ease forwards;
+}
 
-    .nav {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0.75rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+/* Photo */
+.photo-box {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(0,229,255,0.4);
+  box-shadow: 0 0 25px rgba(0,229,255,0.5);
+  animation: scaleIn 1.5s ease forwards;
+}
+.photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
+/* Name */
+.founder-name {
+  font-size: 3.5rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent));
+  -webkit-background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  animation: glowPulse 4s ease-in-out infinite;
+}
 
-    .logo {
-      height: 40px;
-      width: auto;
-      filter: drop-shadow(0 0 12px rgba(0, 229, 255, 0.6));
-    }
+/* Signature */
+.signature {
+  font-size: 1.6rem;
+  font-family: "Brush Script MT", cursive;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  animation: fadeUp 1.8s ease forwards;
+}
 
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
+/* Tagline */
+.tagline {
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  animation: fadeUp 2s ease forwards;
+}
 
-    .brand-text h1 {
-      font-size: 1.1rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
+/* Bio */
+.bio {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 850px;
+  margin: auto;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 2.2s ease forwards;
+}
 
-    .brand-text span {
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
+/* Section Title */
+.section-title {
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      font-size: 0.85rem;
-    }
+/* Experience Timeline */
+.timeline {
+  max-width: 850px;
+  margin: auto;
+  text-align: left;
+  animation: fadeUp 2.4s ease forwards;
+}
+.timeline-item {
+  background: var(--card);
+  border: 1px solid rgba(0,229,255,0.25);
+  padding: 1rem;
+  border-radius: 0.8rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 20px rgba(0,229,255,0.1);
+}
+.timeline-item h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+.timeline-item p {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
 
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      position: relative;
-      padding-bottom: 2px;
-      transition: color 0.2s ease;
-    }
+/* Skills */
+.skills {
+  max-width: 850px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  animation: fadeUp 2.6s ease forwards;
+}
+.skill {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(0,229,255,0.1);
+  border: 1px solid rgba(0,229,255,0.3);
+  color: var(--accent);
+  font-size: 0.85rem;
+}
 
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent), #7b5cff);
-      transition: width 0.25s ease;
-    }
+/* Social Icons */
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  animation: fadeUp 2.8s ease forwards;
+}
+.social a {
+  color: var(--accent);
+  font-size: 1.6rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.social a:hover {
+  color: var(--accent2);
+  transform: translateY(-3px);
+}
 
-    .nav-links a:hover {
-      color: var(--text);
-    }
+/* Button */
+.btn-primary {
+  background: radial-gradient(circle at 0 0, var(--accent), var(--accent2));
+  padding: 0.9rem 2.2rem;
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 18px rgba(0, 229, 255, 0.55);
+  transition: 0.25s;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.75);
+}
 
-    .nav-links a:hover::after {
-      width: 100%;
-    }
+/* WhatsApp Floating Button */
+.whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25D366;
+  color: white;
+  font-size: 1.8rem;
+  padding: 0.7rem 1rem;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+.whatsapp:hover {
+  transform: scale(1.1);
+}
 
-    main {
-      flex: 1;
-    }
+/* Dark/Light Toggle */
+.toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  box-shadow: 0 0 15px rgba(0,229,255,0.5);
+}
 
-    .founder-section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem 2rem;
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 2rem;
-      align-items: flex-start;
-    }
-
-    @media (max-width: 900px) {
-      .founder-section {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .founder-header {
-      margin-bottom: 1rem;
-    }
-
-    .founder-title {
-      font-size: 1.2rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.4rem;
-    }
-
-    .founder-name {
-      font-size: 1.6rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .founder-role {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 0.8rem;
-    }
-
-    .founder-bio {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 1.2rem;
-    }
-
-    .founder-highlight {
-      background: radial-gradient(circle at top, #111a3b, #050814);
-      border-radius: 1rem;
-      border: 1px solid rgba(0, 229, 255, 0.25);
-      padding: 1rem;
-      margin-bottom: 1.2rem;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
-    }
-
-    .highlight-title {
-      font-size: 0.9rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .highlight-list {
-      font-size: 0.8rem;
-      color: var(--muted);
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .highlight-list li {
-      margin-bottom: 0.3rem;
-      position: relative;
-      padding-left: 1rem;
-    }
-
-    .highlight-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-    }
-
-    .founder-meta-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.75rem;
-      margin-bottom: 1.2rem;
-    }
-
-    @media (max-width: 600px) {
-      .founder-meta-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .meta-card {
-      background: radial-gradient(circle at top, #111a3b, #050814);
-      border-radius: 0.9rem;
-      border: 1px solid rgba(0, 229, 255, 0.25);
-      padding: 0.8rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .meta-label {
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-bottom: 0.2rem;
-    }
-
-    .meta-value {
-      font-size: 0.85rem;
-      color: var(--text);
-    }
-
-    .founder-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 0.5rem;
-    }
-
-    .btn {
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      padding: 0.45rem 1.1rem;
-      font-size: 0.8rem;
-      cursor: pointer;
-      background: rgba(11, 16, 36, 0.9);
-      color: var(--text);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: all 0.2s ease;
-      text-decoration: none;
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--accent);
-      border-color: rgba(0, 229, 255, 0.4);
-    }
-
-    .btn-primary {
-      background: radial-gradient(circle at 0 0, #00e5ff, #7b5cff);
-      border-color: transparent;
-      box-shadow: 0 0 18px rgba(0, 229, 255, 0.55);
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 0 22px rgba(0, 229, 255, 0.65);
-      filter: brightness(1.05);
-    }
-
-    .founder-right {
-      position: relative;
-    }
-
-    .founder-card {
-      background: radial-gradient(circle at top, #111a3b, #050814);
-      border-radius: 1.2rem;
-      border: 1px solid rgba(0, 229, 255, 0.25);
-      padding: 1.2rem;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .founder-card::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background: conic-gradient(
-        from 180deg,
-        rgba(0, 229, 255, 0.0),
-        rgba(0, 229, 255, 0.45),
-        rgba(123, 92, 255, 0.45),
-        rgba(0, 229, 255, 0.0)
-      );
-      opacity: 0.35;
-      animation: rotateRing 18s linear infinite;
-    }
-
-    @keyframes rotateRing {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    .founder-card-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .founder-photo {
-      border-radius: 1rem;
-      overflow: hidden;
-      margin-bottom: 0.8rem;
-      border: 1px solid rgba(0, 229, 255, 0.35);
-    }
-
-    .founder-photo img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-      filter: drop-shadow(0 0 18px rgba(0, 229, 255, 0.7));
-    }
-
-    .founder-chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .chip {
-      font-size: 0.75rem;
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      background: rgba(5, 8, 20, 0.9);
-      border: 1px solid rgba(0, 229, 255, 0.35);
-      color: var(--muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    .chip-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--accent);
-    }
-
-    .founder-card-text {
-      font-size: 0.8rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    footer {
-      border-top: 1px solid rgba(0, 229, 255, 0.18);
-      background: rgba(5, 8, 20, 0.95);
-      padding: 0.9rem 1.5rem;
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.75rem;
-    }
-
-    .footer-links a:hover {
-      color: var(--accent);
-    }
-  </style>
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 15px rgba(0,229,255,0.4); }
+  50% { text-shadow: 0 0 35px rgba(0,229,255,0.9); }
+  100% { text-shadow: 0 0 15px rgba(0,229,255,0.4); }
+}
+</style>
 </head>
+
 <body>
-  <div class="bg-grid"></div>
-  <div class="bg-glow"></div>
 
-  <header>
-    <nav class="nav">
-      <div class="nav-left">
-        <img src="logo.png" alt="GMDigiCorp Logo" class="logo" />
-        <div class="brand-text">
-          <h1>GMDigiCorp</h1>
-          <span>Future-Ready IT Support & End-User Computing</span>
-        </div>
-      </div>
-      <div class="nav-links">
-        <a href="index.html#services">Services</a>
-        <a href="index.html#contact">Contact</a>
-        <a href="index.html">Back to Home</a>
-      </div>
-    </nav>
-  </header>
+<div class="bg-grid"></div>
+<div class="bg-glow"></div>
 
-  <main>
-    <section class="founder-section">
-      <div>
-        <div class="founder-header">
-          <div class="founder-title">Meet the Founder</div>
-          <div class="founder-name">Md Golam Mostofa</div>
-          <div class="founder-role">
-            IT Support Engineer · Desktop Support · End-User Computing
-          </div>
-        </div>
+<div class="toggle" onclick="toggleMode()">Toggle Mode</div>
 
-        <p class="founder-bio">
-          Md Golam Mostofa is an IT Support Engineer with over 4 years of hands-on experience delivering L1/L2 desktop
-          and end-user support across enterprise and government environments in the UAE and India. He has worked with
-          organizations such as the Department of Municipalities and Transport (Abu Dhabi), the Ministry of Education
-          (UAE), HCLTech, Reliance Industries Limited (Jio) and Landmark Group (MAX), supporting mission-critical IT
-          operations and user productivity.
-        </p>
+<section class="founder">
 
-        <div class="founder-highlight">
-          <div class="highlight-title">Professional Focus</div>
-          <ul class="highlight-list">
-            <li>
-              Specializes in Microsoft 365, Active Directory, Windows 10/11, Intune and SCCM for modern endpoint
-              management.
-            </li>
-            <li>
-              Strong background in ITSM ticketing, escalation and SLA-driven incident resolution using platforms like
-              ServiceNow, HPSM and ManageEngine.
-            </li>
-            <li>
-              Experienced in troubleshooting hardware, software, VPN and network connectivity issues across diverse
-              user environments.
-            </li>
-            <li>
-              Proven track record in supporting government departments and large enterprises with stable, reliable IT
-              operations.
-            </li>
-          </ul>
-        </div>
+  <div class="photo-box">
+    <img src="founder.png" alt="MD GOLAM MOSTOFA">
+  </div>
 
-        <div class="founder-meta-grid">
-          <div class="meta-card">
-            <div class="meta-label">Current Role</div>
-            <div class="meta-value">
-              IT Support Engineer — MDS UAE (Payroll: Innovations Group)<br />
-              Project: Government — Department of Municipalities and Transport (DMT), Abu Dhabi
-            </div>
-          </div>
-          <div class="meta-card">
-            <div class="meta-label">Previous Engagements</div>
-            <div class="meta-value">
-              IT Support Engineer — Tata Consultancy Services (Ministry of Education, UAE)<br />
-              IT Support Specialist — HCLTech, Chennai<br />
-              IT Support Engineer — Reliance Industries Limited (Jio), Mumbai<br />
-              Cluster IT Executive — Landmark Group (MAX), Kolkata
-            </div>
-          </div>
-          <div class="meta-card">
-            <div class="meta-label">Education</div>
-            <div class="meta-value">
-              B.Tech in Mechanical Engineering — Maulana Abul Kalam Azad University of Technology (2022)<br />
-              Diploma in Engineering (Mechanical) — West Bengal State Council of Technical Education (2017)
-            </div>
-          </div>
-          <div class="meta-card">
-            <div class="meta-label">Certifications</div>
-            <div class="meta-value">
-              CCNA 200-301 — Simplilearn<br />
-              Diploma in Computer Hardware & Maintenance — NCL&D
-            </div>
-          </div>
-        </div>
+  <h1 class="founder-name">MD GOLAM MOSTOFA</h1>
 
-        <div class="founder-actions">
-          <a href="index.html#contact" class="btn btn-primary">
-            Work with GMDigiCorp
-          </a>
-          <a href="https://linkedin.com/in/iammostofaaims" target="_blank" class="btn btn-outline">
-            Connect on LinkedIn
-          </a>
-        </div>
-      </div>
+  <div class="signature">— Mostofa</div>
 
-      <div class="founder-right">
-        <div class="founder-card">
-          <div class="founder-card-inner">
-            <div class="founder-photo">
-              <img src="founder.png" alt="Md Golam Mostofa - Founder of GMDigiCorp" />
-            </div>
-            <div class="founder-chip-row">
-              <div class="chip">
-                <span class="chip-dot"></span>
-                4+ Years · UAE & India
-              </div>
-              <div class="chip">
-                <span class="chip-dot"></span>
-                Microsoft 365 · AD · Windows
-              </div>
-              <div class="chip">
-                <span class="chip-dot"></span>
-                Intune · SCCM · ITSM
-              </div>
-            </div>
-            <div class="founder-card-text">
-              Md’s approach to IT support is grounded in clarity, reliability and user-centric thinking. He combines
-              strong technical skills with structured processes—ensuring that incidents are resolved within SLA,
-              environments remain stable and users feel confident in the technology they rely on every day.
-              <br /><br />
-              GMDigiCorp is his way of bringing that experience together into a focused, future-ready IT support brand
-              that can partner with organizations across Abu Dhabi, Dubai and beyond.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+  <div class="tagline">Future-Ready IT Operation Engineer</div>
 
-  <footer>
-    <div class="footer-inner">
-      <span>© GMDigiCorp — Founded by Md Golam Mostofa</span>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#contact">Contact</a>
-      </div>
+  <p class="bio">
+    With 4+ years of enterprise and government IT Infrastructure & Operation Support experience across UAE & India,  
+    <strong>MD GOLAM MOSTOFA</strong> has built a reputation for delivering stable, secure,  
+    and SLA-driven IT operations.  
+    <br><br>
+    From the Department of Municipalities and Transport (Abu Dhabi) to the Ministry of Education (UAE),  
+    HCLTech, Reliance Jio, and Landmark Group — he has supported mission-critical systems,  
+    modern endpoint environments, and thousands of end-users with precision and reliability.
+  </p>
+
+  <h2 class="section-title">Experience Timeline</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>MDS UAE — Abu Dhabi (DMT Project)</h3>
+      <p>IT Support Engineer · 2026 – Present</p>
     </div>
-  </footer>
+
+    <div class="timeline-item">
+      <h3>Tata Consultancy Services — Dubai (MOE Project)</h3>
+      <p>IT Support Engineer · 2025 – 2026</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>HCLTech — Chennai (Ford GTBC Project)</h3>
+      <p>IT Support Specialist · 2025</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Reliance Industries Limited (Jio) — Mumbai</h3>
+      <p>IT Support Engineer · 2023 – 2025</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Landmark Group (MAX) — Kolkata</h3>
+      <p>Cluster IT Executive · 2022</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">Technical Skills</h2>
+
+  <div class="skills">
+    <span class="skill">Microsoft 365</span>
+    <span class="skill">Active Directory</span>
+    <span class="skill">Windows 10/11</span>
+    <span class="skill">Intune</span>
+    <span class="skill">SCCM</span>
+    <span class="skill">ITSM (ServiceNow / HPSM)</span>
+    <span class="skill">Networking (TCP/IP, DNS, DHCP, VPN)</span>
+    <span class="skill">End-User Computing</span>
+  </div>
+
+  <div class="social">
+    <a href="https://linkedin.com/in/iammostofaaims" target="_blank">🔗</a>
+    <a href="mailto:golammostofa239@gmail.com">✉️</a>
+    <a href="tel:+971522230991">📞</a>
+  </div>
+
+  <button class="btn-primary" onclick="location.href='index.html'">
+    Back to Home
+  </button>
+
+</section>
+
+<!-- WhatsApp Floating Button -->
+<a class="whatsapp" href="https://wa.me/971522230991" target="_blank">💬</a>
+
+<script>
+function toggleMode() {
+  document.body.classList.toggle("light");
+}
+</script>
+
 </body>
 </html>
