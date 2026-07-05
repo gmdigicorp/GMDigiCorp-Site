@@ -5,6 +5,9 @@
 <title>Founder | MD GOLAM MOSTOFA | GMDigiCorp</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<!-- Particle.js -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
 <style>
 :root {
   --bg: #050814;
@@ -16,14 +19,14 @@
   --font-main: "Segoe UI", system-ui, sans-serif;
 }
 
-/* Light Mode Variables */
+/* Light Mode */
 .light {
   --bg: #f7f9fc;
   --text: #0a0a0a;
   --muted: #444;
-  --card: #ffffff;
   --accent: #007bff;
   --accent2: #6610f2;
+  --card: #ffffff;
 }
 
 /* Base */
@@ -37,6 +40,13 @@ body {
   transition: background 0.4s, color 0.4s;
 }
 
+/* Particle Background */
+#particles-js {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+}
+
 /* Background Grid */
 .bg-grid {
   position: fixed;
@@ -44,7 +54,7 @@ body {
   background-image: linear-gradient(rgba(0, 229, 255, 0.08) 1px, transparent 1px),
                     linear-gradient(90deg, rgba(0, 229, 255, 0.08) 1px, transparent 1px);
   background-size: 40px 40px;
-  opacity: 0.35;
+  opacity: 0.25;
   animation: gridMove 18s linear infinite;
   z-index: -2;
 }
@@ -63,36 +73,58 @@ body {
   z-index: -1;
 }
 
-/* Container */
+/* Toggle */
+.toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  box-shadow: 0 0 15px rgba(0,229,255,0.5);
+  z-index: 50;
+}
+
+/* Founder Section */
 .founder {
   max-width: 1100px;
-  margin: 1100px;
   margin: auto;
   padding: 3rem 1.5rem;
   text-align: center;
   animation: fadeIn 1.2s ease forwards;
 }
 
-/* Photo */
+/* Responsive Portrait Photo */
 .photo-box {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  max-width: 380px;
   margin: 0 auto 2rem;
-  border-radius: 50%;
+  border-radius: 18px;
   overflow: hidden;
-  border: 3px solid rgba(0,229,255,0.4);
-  box-shadow: 0 0 25px rgba(0,229,255,0.5);
+  border: 4px solid rgba(0,229,255,0.5);
+  box-shadow: 0 0 35px rgba(0,229,255,0.6);
   animation: scaleIn 1.5s ease forwards;
 }
 .photo-box img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Mobile Optimization */
+@media (max-width: 480px) {
+  .photo-box {
+    max-width: 300px;
+    border-radius: 12px;
+  }
 }
 
 /* Name */
 .founder-name {
-  font-size: 3.5rem;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
   font-weight: 900;
   background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent));
   -webkit-background-clip: text;
@@ -104,24 +136,25 @@ body {
 
 /* Signature */
 .signature {
-  font-size: 1.6rem;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
   font-family: "Brush Script MT", cursive;
   color: var(--accent);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   animation: fadeUp 1.8s ease forwards;
 }
 
-/* Tagline */
+/* Auto Typing Tagline */
 .tagline {
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
   color: var(--accent);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  height: 40px;
   animation: fadeUp 2s ease forwards;
 }
 
 /* Bio */
 .bio {
-  font-size: 1.05rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: var(--muted);
   line-height: 1.7;
   max-width: 850px;
@@ -132,7 +165,7 @@ body {
 
 /* Section Title */
 .section-title {
-  font-size: 1.4rem;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
   color: var(--accent);
   margin-bottom: 1rem;
   margin-top: 2rem;
@@ -140,7 +173,7 @@ body {
   letter-spacing: 0.1em;
 }
 
-/* Experience Timeline */
+/* Timeline */
 .timeline {
   max-width: 850px;
   margin: auto;
@@ -185,17 +218,30 @@ body {
   font-size: 0.85rem;
 }
 
+/* Job Roles */
+.roles {
+  max-width: 850px;
+  margin: auto;
+  text-align: left;
+  animation: fadeUp 2.8s ease forwards;
+}
+.roles li {
+  margin-bottom: 0.6rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
 /* Social Icons */
 .social {
   display: flex;
   justify-content: center;
   gap: 1rem;
   margin: 2rem 0;
-  animation: fadeUp 2.8s ease forwards;
+  animation: fadeUp 3s ease forwards;
 }
 .social a {
   color: var(--accent);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   text-decoration: none;
   transition: 0.3s;
 }
@@ -207,10 +253,10 @@ body {
 /* Button */
 .btn-primary {
   background: radial-gradient(circle at 0 0, var(--accent), var(--accent2));
-  padding: 0.9rem 2.2rem;
+  padding: 1rem 2.4rem;
   border-radius: 999px;
   color: var(--text);
-  font-size: 1rem;
+  font-size: 1.1rem;
   border: none;
   cursor: pointer;
   box-shadow: 0 0 18px rgba(0, 229, 255, 0.55);
@@ -239,20 +285,6 @@ body {
   transform: scale(1.1);
 }
 
-/* Dark/Light Toggle */
-.toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: var(--accent);
-  color: var(--text);
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  box-shadow: 0 0 15px rgba(0,229,255,0.5);
-}
-
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
@@ -276,6 +308,7 @@ body {
 
 <body>
 
+<div id="particles-js"></div>
 <div class="bg-grid"></div>
 <div class="bg-glow"></div>
 
@@ -291,16 +324,12 @@ body {
 
   <div class="signature">— Mostofa</div>
 
-  <div class="tagline">Future-Ready IT Operation Engineer</div>
+  <div class="tagline" id="typing"></div>
 
   <p class="bio">
-    With 4+ years of enterprise and government IT Infrastructure & Operation Support experience across UAE & India,  
-    <strong>MD GOLAM MOSTOFA</strong> has built a reputation for delivering stable, secure,  
-    and SLA-driven IT operations.  
-    <br><br>
-    From the Department of Municipalities and Transport (Abu Dhabi) to the Ministry of Education (UAE),  
-    HCLTech, Reliance Jio, and Landmark Group — he has supported mission-critical systems,  
-    modern endpoint environments, and thousands of end-users with precision and reliability.
+    IT Operation Engineer with 4+ years of enterprise and government IT experience across UAE & India.
+    Founder of <strong>GMDigiCorp</strong>, delivering modern IT operations, end-user computing, and
+    Microsoft ecosystem support with precision, stability, and SLA-driven excellence.
   </p>
 
   <h2 class="section-title">Experience Timeline</h2>
@@ -308,7 +337,7 @@ body {
   <div class="timeline">
     <div class="timeline-item">
       <h3>MDS UAE — Abu Dhabi (DMT Project)</h3>
-      <p>IT Support Engineer · 2026 – Present</p>
+      <p>IT Operation Engineer · 2026 – Present</p>
     </div>
 
     <div class="timeline-item">
@@ -317,7 +346,7 @@ body {
     </div>
 
     <div class="timeline-item">
-      <h3>HCLTech — Chennai (Ford GTBC Project)</h3>
+      <h3>HCLTech — Chennai</h3>
       <p>IT Support Specialist · 2025</p>
     </div>
 
@@ -345,6 +374,24 @@ body {
     <span class="skill">End-User Computing</span>
   </div>
 
+  <h2 class="section-title">Company Job Roles & Responsibilities</h2>
+
+  <ul class="roles">
+    <li>✔ Managing daily IT operations across enterprise & government environments.</li>
+    <li>✔ Providing L1/L2 support for desktops, laptops, printers, and peripherals.</li>
+    <li>✔ Handling Microsoft 365 administration (Outlook, Teams, SharePoint).</li>
+    <li>✔ Managing Active Directory: user creation, password reset, access control.</li>
+    <li>✔ Deploying and managing devices using Intune & SCCM.</li>
+    <li>✔ Performing patch management and compliance checks.</li>
+    <li>✔ Troubleshooting network issues (DNS, DHCP, VPN, TCP/IP).</li>
+    <li>✔ Managing ITSM tickets using ServiceNow, HPSM, and ManageEngine.</li>
+    <li>✔ Supporting remote and on-site users with SLA-driven resolution.</li>
+    <li>✔ Coordinating with vendors for hardware/software issues.</li>
+    <li>✔ Ensuring IT security policies and standards are followed.</li>
+    <li>✔ Preparing IT documentation, SOPs, and daily operation reports.</li>
+    <li>✔ Supporting enterprise rollouts, migrations, and deployments.</li>
+  </ul>
+
   <div class="social">
     <a href="https://linkedin.com/in/iammostofaaims" target="_blank">🔗</a>
     <a href="mailto:golammostofa239@gmail.com">✉️</a>
@@ -357,13 +404,38 @@ body {
 
 </section>
 
-<!-- WhatsApp Floating Button -->
 <a class="whatsapp" href="https://wa.me/971522230991" target="_blank">💬</a>
 
 <script>
 function toggleMode() {
   document.body.classList.toggle("light");
 }
+
+/* Auto Typing Tagline */
+const text = "IT Operation Engineer";
+let i = 0;
+function typingEffect() {
+  if (i < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typingEffect, 120);
+  }
+}
+typingEffect();
+
+/* Particle.js Config */
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 60 },
+    size: { value: 3 },
+    color: { value: "#00e5ff" },
+    line_linked: {
+      enable: true,
+      color: "#00e5ff"
+    },
+    move: { speed: 2 }
+  }
+});
 </script>
 
 </body>
