@@ -99,10 +99,10 @@ body {
   animation: fadeIn 1.2s ease forwards;
 }
 
-/* FULL PORTRAIT PHOTO */
+/* UNIVERSAL RESPONSIVE PORTRAIT PHOTO */
 .photo-box {
   width: 320px;
-  height: 420px;
+  max-width: 95%;
   margin: 0 auto 2rem;
   border-radius: 18px;
   overflow: hidden;
@@ -112,8 +112,17 @@ body {
 }
 .photo-box img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 480px) {
+  .photo-box {
+    width: 260px;
+    border-radius: 12px;
+  }
 }
 
 /* Name */
@@ -283,7 +292,6 @@ footer {
   © 2026 GMDigiCorp — Designed by MD GOLAM MOSTOFA
 </footer>
 
-<!-- WhatsApp Floating Button -->
 <a class="whatsapp" href="https://wa.me/971522230991" target="_blank">💬</a>
 
 <script>
